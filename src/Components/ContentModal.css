@@ -1,0 +1,12 @@
+.close-button {
+	border: none;
+	background: transparent;
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	font-size: 25px;
+}
+
+.modal-header {
+	padding-bottom: 15px;
+}

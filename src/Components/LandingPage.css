@@ -1,0 +1,164 @@
+.banner-text {
+	font-family: "Lobster", cursive;
+	font-size: 90px;
+	text-align: center;
+	width: 60%;
+	margin: 90px auto 40px;
+}
+
+.bgwhite {
+	background: ghostwhite;
+}
+
+.body-text {
+	font-size: 18px;
+	font-weight: bolder;
+	padding-bottom: 10px;
+}
+
+.body-text-wrapper {
+	/* padding-bottom: 20%; */
+}
+
+.col-left {
+	flex: 3;
+	box-sizing: border-box;
+}
+
+.col-right {
+	flex: 4;
+}
+
+.col-left,
+.col-right {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.cta-text {
+	font-weight: bolder;
+	padding-bottom: 10px;
+	font-size: 18px;
+}
+
+.cta-text-wrapper {
+	bottom: 0;
+	padding-bottom: 10px;
+}
+
+.first {
+	padding: 50px 0 100px;
+}
+
+.first > .row {
+	padding-bottom: 40px;
+}
+
+.helper-text {
+	padding-top: 30px;
+}
+
+.row {
+	display: flex;
+	max-width: 1440px;
+	margin: 0 auto;
+	min-height: 35vh;
+	padding: 150px 0;
+	width: 70%;
+}
+
+.row-short {
+	min-height: 0;
+	padding: 0 0 30px;
+}
+
+.spacer {
+	flex: 1;
+}
+
+.success-message {
+	padding-top: 20px;
+}
+
+@media only screen and (max-width: 1440px) {
+	.cta-text {
+		font-size: 16px;
+	}
+	.body-text {
+		font-size: 18px;
+	}
+
+	.spacer {
+		flex: 0.5;
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.banner-text {
+		font-size: 70px;
+		width: 70%;
+	}
+
+	.cta-text,
+	.helper-text,
+	.row-short {
+		font-size: 14px;
+	}
+	.body-text {
+		font-size: 16px;
+	}
+
+	.spacer {
+		flex: 0.5;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.banner-text {
+		font-size: 60px;
+		width: 80%;
+	}
+
+	.cta-text,
+	.helper-text,
+	.row-short {
+		font-size: 16px;
+	}
+
+	.cta-text-wrapper,
+	.body-text-wrapper {
+		padding: 50px 0 20px;
+	}
+
+	.body-text-wrapper {
+		padding: 70px 0 0px;
+	}
+
+	.first {
+		padding: 20px 0;
+	}
+
+	.first > .row {
+		padding-bottom: 20px;
+	}
+
+	.row {
+		display: block;
+		padding: 120px 0;
+		width: 80%;
+	}
+
+	.row-short {
+		position: relative;
+		padding: 0;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.banner-text {
+		font-size: 40px;
+		width: 90%;
+		margin: 60px auto 0px;
+	}
+}

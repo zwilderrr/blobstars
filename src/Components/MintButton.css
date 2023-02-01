@@ -1,0 +1,115 @@
+.count-btn {
+	background: transparent;
+	border: solid thin transparent;
+	font-size: 22px;
+	color: black;
+	transition: 0.1s;
+}
+
+.count-btn:hover {
+	color: white;
+	cursor: pointer;
+}
+
+.count-btn:disabled {
+	color: black;
+	cursor: default;
+}
+.count-btn:hover:disabled {
+	color: black;
+}
+
+.count-btn-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.mint-btn {
+	background: white;
+	border: solid thick black;
+	border-radius: 4vw;
+	color: black;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 18px;
+	margin-right: 10px;
+	transition: all 0.3s ease;
+	width: 80%;
+}
+
+.mint-btn:disabled {
+	color: gray;
+	border-color: gray;
+}
+
+.mint-btn:disabled:hover {
+	transform: none;
+	box-shadow: none;
+}
+
+.mint-btn:hover {
+	box-shadow: 0px 6px 5px 0px rgb(0, 0, 0, 0.4);
+	transform: translateY(-3px);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.mint-btn:active {
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+	transform: translateY(-2px);
+	transition: all 0.1s;
+	cursor: pointer;
+}
+
+.mint-btn-wrapper {
+	display: flex;
+	margin-top: 18px;
+	text-align: center;
+	align-items: center;
+	opacity: 0;
+	animation: fadeIn 0.7s 2.6s forwards;
+}
+
+@media only screen and (max-width: 1440px) {
+	.mint-btn {
+		font-size: 18px;
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.mint-btn {
+		font-size: 16px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.count-btn:hover {
+		color: unset;
+	}
+
+	.mint-btn {
+		border: solid thin transparent;
+		border-radius: 50px;
+		padding: 15px;
+		margin-right: unset;
+		width: 100%;
+		font-size: 16px;
+		box-shadow: 0px 4px 5px 0px rgb(0, 0, 0, 0.4);
+		cursor: pointer;
+		transition: all 0.2s ease;
+	}
+
+	.mint-btn:active,
+	.mint-btn:disabled,
+	.mint-btn:disabled:hover {
+		box-shadow: 0px 4px 5px 0px rgb(0, 0, 0, 0.4);
+		transform: none;
+		border-color: transparent;
+	}
+
+	.mint-btn-wrapper {
+		margin-top: 18px;
+		margin-bottom: 50px;
+	}
+}

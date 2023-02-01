@@ -1,0 +1,59 @@
+.tl-wrapper {
+	margin: 0 auto;
+	width: 50%;
+	max-width: 1440px;
+	min-height: 50vh;
+	padding: 140px 0 120px;
+}
+
+.pulse {
+	animation: pulse 2s infinite;
+}
+
+@keyframes backgroundPulse {
+	0% {
+		background: transparent;
+	}
+	50% {
+		background: rgb(255, 161, 213);
+	}
+	100% {
+		background: transparent;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 6px rgba(255, 82, 82, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.tl-wrapper {
+		width: 70%;
+	}
+	.mint-now-btn-wrapper {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.tl-wrapper {
+		width: 95%;
+		padding: 80px 0;
+	}
+
+	.mint-now-btn {
+		font-size: 10vw;
+	}
+}

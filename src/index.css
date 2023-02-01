@@ -1,0 +1,33 @@
+html,
+body {
+	background: rgb(255, 161, 213);
+	margin: 0;
+	font-family: "Open Sans", sans-serif;
+	line-height: 1.5;
+}
+
+button {
+	font-family: "Open Sans", sans-serif;
+}
+
+button:disabled {
+	cursor: default !important;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.external-link {
+	text-decoration: underline;
+}
+
+.not-visible {
+	opacity: 0;
+}
