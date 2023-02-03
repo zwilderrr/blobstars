@@ -1,14 +1,13 @@
-import { useState, useEffect } from "react";
+import "./Header.css";
+
+import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
-import { socialMediaLinks } from "../content";
-import "./Header.css";
 import { ReactComponent as Logo } from "../images/logo.svg";
-
 import RockstarsNFTJSON from "../contracts/RockstarsNFT.json";
-
-import detectEthereumProvider from "@metamask/detect-provider";
 import Web3 from "web3";
+import detectEthereumProvider from "@metamask/detect-provider";
+import { socialMediaLinks } from "../content";
 
 let provider;
 let web3;
@@ -117,7 +116,7 @@ export function Header({
 	return (
 		<div className={`header ${shrink ? "shadow" : ""}`}>
 			<Link to="/">
-				<Logo />
+				<div className="logo-text">B</div>
 			</Link>
 
 			<div className="links-wrapper">

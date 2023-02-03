@@ -1,20 +1,21 @@
 import "./About.css";
+
 import { Image } from "./LandingPage";
-import zack from "../images/zack.png";
 import gail from "../images/gail.png";
+import zack from "../images/zack.png";
 
 const staff = [
 	{
 		name: "Zack",
 		img: zack,
-		title: "Creator @ RockstarsNFT",
+		title: "Creator @ BlobStarsNFT",
 		funFact: "Pixel artist and latte enthusiast",
 		link: "https://zackwilder.com",
 	},
 	{
 		name: "Abby",
 		img: gail,
-		title: "Product @ RockstarsNFT",
+		title: "Product @ BlobStarsNFT",
 		funFact: "Yoga master and gourmet chef",
 	},
 ];

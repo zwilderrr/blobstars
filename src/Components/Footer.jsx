@@ -1,10 +1,11 @@
 import "./Footer.css";
+
 import { socialMediaLinks, termsLink } from "../content";
-import { ReactComponent as FooterText } from "../images/footer-rockstar-text.svg";
+
 export function Footer() {
 	return (
 		<div className="footer">
-			<FooterText />
+			<div className="logo-text">BlobStars</div>
 			<div className="links">
 				{[...socialMediaLinks, termsLink].map(link => (
 					<a

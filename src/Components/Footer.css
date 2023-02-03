@@ -19,6 +19,11 @@
 	fill: white;
 }
 
+.footer-logo-text {
+	font-size: 60px;
+	font-family: "Lobster";
+}
+
 @media only screen and (max-width: 768px) {
 	.footer {
 		margin-top: 30px;
@@ -30,8 +35,7 @@
 		margin-right: 14px;
 	}
 
-	.footer svg {
-		height: 46px;
-		fill: white;
+	.footer-logo-text {
+		font-size: 36px;
 	}
 }

@@ -8,6 +8,17 @@
 	animation: fadeInUp 1s forwards;
 }
 
+.logo-text {
+	font-size: 60px;
+	font-family: "Lobster";
+}
+
+@media only screen and (max-width: 768px) {
+	.logo-text {
+		font-size: 36px;
+	}
+}
+
 @keyframes fadeInUp {
 	from {
 		opacity: 0;

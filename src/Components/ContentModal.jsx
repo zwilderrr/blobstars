@@ -1,7 +1,9 @@
-import React from "react";
-import { Box, Modal, Fade } from "@mui/material";
-import { tweet } from "../content";
 import "./ContentModal.css";
+
+import { Box, Fade, Modal } from "@mui/material";
+
+import React from "react";
+import { tweet } from "../content";
 
 const openSeaUrlDev = "https://testnets.opensea.io/account/rockstarsnftdev-v2";
 // const openSeaUrlDev =
@@ -45,7 +47,7 @@ export function ContentModal({
 					>
 						Share
 					</a>{" "}
-					your new Rockstar status on Twitter
+					your new BlobStar status on Twitter
 				</div>
 				<br />
 				<div>
@@ -69,7 +71,7 @@ export function ContentModal({
 					>
 						OpenSea
 					</a>{" "}
-					to check out your Rockstar (may take a few minutes to display)
+					to check out your BlobStar (may take a few minutes to display)
 				</div>
 			</>
 		),
@@ -77,7 +79,7 @@ export function ContentModal({
 			<>
 				<h1 className="modal-header">Error</h1>
 				<div>
-					There was an error minting your Rockstar. You've been refunded all ETH
+					There was an error minting your BlobStar. You've been refunded all ETH
 					sent (minus gas fees).
 				</div>
 			</>

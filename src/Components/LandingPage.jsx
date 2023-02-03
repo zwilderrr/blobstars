@@ -58,7 +58,7 @@ export function Image({ src, style = {}, show = true }) {
 		<div className={`${show ? "fadeIn" : "not-visible"}`}>
 			<img
 				src={src}
-				alt="RockstarsNFT"
+				alt="BlobStarsNFT"
 				width="100%"
 				style={style}
 				loading="lazy"
@@ -92,7 +92,7 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 		if (isMobile) {
 			return (
 				<div className="fadeIn" style={{ animationDelay: "2.6s" }}>
-					On mobile? Go to rockstars.buzz on the{" "}
+					On mobile? Go to blobstars.io on the{" "}
 					<a
 						href="https://metamask.io/download"
 						className="external-link"

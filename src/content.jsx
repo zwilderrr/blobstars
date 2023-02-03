@@ -29,10 +29,10 @@ export const termsLink = { name: "terms", href: "/terms" };
 
 export const ctaText = [
 	<span>
-		<span style={{ fontSize: "larger" }}>RockstarsNFT</span> is a community of
-		10,000 uniquely generated NFTs rockin' out on the Ethereum blockchain.
+		<span style={{ fontSize: "larger" }}>BlobStarsNFT</span> is a community of
+		10,000 uniquely generated NFTs blobin' out on the Base blockchain.
 	</span>,
-	"They're rockstars, so they live big, but they're cartoons, so they're fun and friendly (and even a bit mischievous)!",
+	"They're blobs, so they live big, but they're cartoons, so they're fun and friendly (and even a bit mischievous)!",
 	"Follow us on Twitter & join our Discord for project updates.",
 ];
 
@@ -70,13 +70,13 @@ export const timelineText = [
 	{
 		percent: 20,
 		title: "Public launch",
-		description: "Mint a RockstarNFT and live the dream",
+		description: "Mint a BlobStarNFT and live the dream",
 	},
 	// {
 	// 	percent: 40,
 	// 	title: "RockVenuesNFT",
 	// 	description:
-	// 		"Invite your Rockstar friends and other NFTs to get the party started",
+	// 		"Invite your BlobStar friends and other NFTs to get the party started",
 	// },
 	// {
 	// 	percent: 60,
@@ -99,13 +99,13 @@ export const timelineText = [
 // 	{
 // 		percent: 20,
 // 		title: "Public launch",
-// 		description: "Mint a Rockstar and live the dream",
+// 		description: "Mint a BlobStar and live the dream",
 // 	},
 // 	{
 // 		percent: 40,
 // 		title: "RockVenues NFT",
 // 		description:
-// 			"Invite your Rockstar friends and other NFTs to get the party started",
+// 			"Invite your BlobStar friends and other NFTs to get the party started",
 // 	},
 // 	{
 // 		percent: 60,
@@ -120,23 +120,23 @@ export const timelineText = [
 // ];
 
 export const rareText = [
-	"When you mint a Rockstar, you mint a vote for humanity. You proudly state that life is not a zero-sum game. It's a game of big and little triumphs, big and little acts of kindness, and it is only won when everyone wins.",
+	"When you mint a BlobStar, you mint a vote for humanity. You proudly state that life is not a zero-sum game. It's a game of big and little triumphs, big and little acts of kindness, and it is only won when everyone wins.",
 	<span>
-		When you <i>are</i> a Rockstar, you're a good person living an epic
+		When you <i>are</i> a BlobStar, you're a good person living an epic
 		life—even if epic just means treating the local barista really nicely.
 	</span>,
 ];
 // "Life isn't a choice between being rich and powerful but not a nice person doing not nice things, or being kind and giving but feeling small and unimportant.",
 
 // export const whyText = [
-// 	"When you mint a Rockstar you choose to live an epic life of humble grandeur.",
-// 	"Rockstars are famous but treat their neighborhood barista really nicely. They're start-up founders and philosophers and quiet revolutionaries but help clean up their local park even when no one is looking. They're genuine, sincere people who do the right thing and know how to have a blast doing it.",
-// 	"A Rockstar is everything. Because they're Rockstars--so they rock, but they're cartoons, so they're always there for you.",
-// 	"When you mint a Rockstar, you mint a vote for humanity. You mint a vote for what's good and right in the world. You put yourself on the winning team and become a force of good in the world. You say that life is not a zero sum game--it's a game of big success and big kindness and it's only won when everyone wins.",
+// 	"When you mint a BlobStar you choose to live an epic life of humble grandeur.",
+// 	"BlobStars are famous but treat their neighborhood barista really nicely. They're start-up founders and philosophers and quiet revolutionaries but help clean up their local park even when no one is looking. They're genuine, sincere people who do the right thing and know how to have a blast doing it.",
+// 	"A BlobStar is everything. Because they're blobs--so they chill, but they're cartoons, so they're always there for you.",
+// 	"When you mint a BlobStar, you mint a vote for humanity. You mint a vote for what's good and right in the world. You put yourself on the winning team and become a force of good in the world. You say that life is not a zero sum game--it's a game of big success and big kindness and it's only won when everyone wins.",
 // ];
 
 // export const rareText = [
-// 	"Rare, ultra-rare, and hyper-rare Rockstars are ready to rock and roll",
+// 	"Rare, ultra-rare, and hyper-rare BlobStars are ready to blob and roll",
 // <div
 // 	style={{ textDecoration: "underline", cursor: "pointer" }}
 // 	onClick={() => scrollToTop(200)}
@@ -145,45 +145,45 @@ export const rareText = [
 // </div>,
 // ];
 export const whyText = [
-	"That's the ethos we wanted to bring to the world, and that's why we created RockstarsNFT. They're Rockstars, so they live big, but they're cartoons, so they're fun and friendly (and even a bit mischievous)!",
-	"Rare, ultra-rare, and hyper-rare Rockstars are ready to rock and roll.",
+	"That's the ethos we wanted to bring to the world, and that's why we created BlobStarsNFT. They're blobs, so they live big, but they're cartoons, so they're fun and friendly (and even a bit mischievous)!",
+	"Rare, ultra-rare, and hyper-rare BlobStars are ready to blob and roll.",
 	// "Mint one now and live the dream.",
 ];
 
 // export const whyText = "Gain instant access to a community of epic people living epic lives.",
 
 // export const whyText = [
-// 	"When you mint a Rockstar, you join a community of people who are awesome, fun and friendly.",
-// 	"Rockstars are famous but treat their neighborhood barista really nicely. They're start-up founders and philosophers and revolutionaries but help clean up their local park even when no one is looking.",
-// 	"A Rockstar is everything. Because they're Rockstars--so they rock, but they're cartoons, so they're always there for you.",
+// 	"When you mint a BlobStar, you join a community of people who are awesome, fun and friendly.",
+// 	"BlobStars are famous but treat their neighborhood barista really nicely. They're start-up founders and philosophers and revolutionaries but help clean up their local park even when no one is looking.",
+// 	"A BlobStar is everything. Because they're blobs--so they chill, but they're cartoons, so they're always there for you.",
 // 	"Mint one now and join the band.",
 // ];
 // export const whyText = [
-// 	"When you mint a Rockstar, you join a community of people who are awesome, fun and friendly. You choose to live an epic life of humble grandeur.",
-// 	"Rockstars are famous but treat their neighborhood barista really nicely. They're start-up founders and philosophers and quiet revolutionaries but help clean up their local park even when no one is looking. They have a blast just being kind, good people.",
-// 	"A Rockstar is everything. Because they're Rockstars--so they rock, but they're cartoons, so they're always there for you.",
+// 	"When you mint a BlobStar, you join a community of people who are awesome, fun and friendly. You choose to live an epic life of humble grandeur.",
+// 	"BlobStars are famous but treat their neighborhood barista really nicely. They're start-up founders and philosophers and quiet revolutionaries but help clean up their local park even when no one is looking. They have a blast just being kind, good people.",
+// 	"A BlobStar is everything. Because they're blobs--so they chill, but they're cartoons, so they're always there for you.",
 // 	"Mint one now and join the band.",
 // ];
 // export const whyText = [
-// 	"When you mint a Rockstar, you join a community of people who are awesome, fun and friendly. You choose to live an epic life of humble grandeur.",
-// 	"Rockstars are famous but treat their neighborhood barista really nicely. They're start-up founders and philosophers and quiet revolutionaries but help clean up their local park even when no one is looking. They have a blast just being kind, good people.",
-// 	"A Rockstar is everything. Because they're Rockstars--so they rock, but they're cartoons, so they're always there for you.",
-// 	"When you mint a Rockstar, you mint a vote for humanity. You say that life is not a zero sum game--it's a game of big success and big kindness and it's only won when everyone wins.",
-// 	"Mint a Rockstar now and join the cause.",
+// 	"When you mint a BlobStar, you join a community of people who are awesome, fun and friendly. You choose to live an epic life of humble grandeur.",
+// 	"BlobStars are famous but treat their neighborhood barista really nicely. They're start-up founders and philosophers and quiet revolutionaries but help clean up their local park even when no one is looking. They have a blast just being kind, good people.",
+// 	"A BlobStar is everything. Because they're blobs--so they chill, but they're cartoons, so they're always there for you.",
+// 	"When you mint a BlobStar, you mint a vote for humanity. You say that life is not a zero sum game--it's a game of big success and big kindness and it's only won when everyone wins.",
+// 	"Mint a BlobStar now and join the cause.",
 // ];
 // export const whyText = [
-// 	"RockstarsNFT is a community of people who are awesome, fun and friendly. When you mint a Rockstar you choose to live an epic life of humble grandeur.",
-// 	"Rockstars are famous but treat their neighborhood barista really nicely. They're start-up founders and philosophers and quiet revolutionaries but help clean up their local park even when no one is looking. They're genuine, sincere people who do the right thing and know how to have a blast doing it.",
-// 	"A Rockstar is everything. Because they're Rockstars--so they rock, but they're cartoons, so they're always there for you.",
-// 	"When you mint a Rockstar, you mint a vote for humanity. You mint a vote for what's good and right in the world. You put yourself on the winning team and become a force of good in the world. You say that life is not a zero sum game--it's a game of big success and big kindness and it's only won when everyone wins.",
-// 	"Mint a Rockstar now and join the cause.",
+// 	"BlobStarsNFT is a community of people who are awesome, fun and friendly. When you mint a BlobStar you choose to live an epic life of humble grandeur.",
+// 	"BlobStars are famous but treat their neighborhood barista really nicely. They're start-up founders and philosophers and quiet revolutionaries but help clean up their local park even when no one is looking. They're genuine, sincere people who do the right thing and know how to have a blast doing it.",
+// 	"A BlobStar is everything. Because they're blobs--so they chill, but they're cartoons, so they're always there for you.",
+// 	"When you mint a BlobStar, you mint a vote for humanity. You mint a vote for what's good and right in the world. You put yourself on the winning team and become a force of good in the world. You say that life is not a zero sum game--it's a game of big success and big kindness and it's only won when everyone wins.",
+// 	"Mint a BlobStar now and join the cause.",
 // ];
 // export const whyText = [
 // 	"Gain access to a community of people who are epic, fun and friendly. Life is not a choice between being rich, successful, and famous but not a nice person doing not nice things, or being good and kind and giving, but feeling unimportant.",
 // 	"Life is about being famous, but treating the local barista really nicely. About being a revolutionary, but volunteering at the food bank with a smile. About being a paradigm-altering philosopher, but taking the time to tutor underprivileged kids. Or just about having integrity, being a kind, sincere, genuine person who does the right thing--but knows how to have a great time.",
-// 	"A Rockstar is both and everything. Because they're Rockstars--so they rock, but they're cartoons, so they're always there for you.",
-// 	"When you mint a rockstar, you mint a vote for humanity. You mint a vote for what's good and right in the world. You put yourself on the winning team and become a force of good in the world.",
-// 	"Get the picture? Mint a Rockstar now and join the movement.",
+// 	"A BlobStar is both and everything. Because they're blobs--so they chill, but they're cartoons, so they're always there for you.",
+// 	"When you mint a BlobStar, you mint a vote for humanity. You mint a vote for what's good and right in the world. You put yourself on the winning team and become a force of good in the world.",
+// 	"Get the picture? Mint a BlobStar now and join the movement.",
 // ];
 
 // Life isn't a choice between being rich and powerful but not a nice person doing not nice things, or being kind and giving but feeling unimportant. Our Response? A fun, friendly community of good people living epic lives--even if epic just meant treating the local barista nicely.
