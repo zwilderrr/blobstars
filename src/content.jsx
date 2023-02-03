@@ -1,15 +1,15 @@
 import { scrollToTop } from "./Components/Header";
 
 export const socialMediaLinks = [
-	{
-		iconClass: "fab fa-discord",
-		name: "discord",
-		href: "https://discord.gg/Hb6EezYRCH",
-	},
+	// {
+	// 	iconClass: "fab fa-discord",
+	// 	name: "discord",
+	// 	href: "https://discord.gg/Hb6EezYRCH",
+	// },
 	{
 		iconClass: "fab fa-twitter",
 		name: "twitter",
-		href: "https://twitter.com/rockstars_nft",
+		href: "https://twitter.com/blobstars_nft",
 	},
 
 	// {
@@ -23,24 +23,24 @@ export const socialMediaLinks = [
 ];
 
 export const tweet =
-	"https://twitter.com/intent/tweet?text=Finally%20achieved%20Rockstar%20status%21%20Mint%20your%20own%20Rockstar%20NFT%20at%20https%3A//rockstars.buzz%20and%20check%20out%20the%20%23Rockstars_NFT%20collection%20at%20https%3A//opensea.com&hashtags=Rockstars_NFT%2CNFT%2CNFTart";
+	"https://twitter.com/intent/tweet?text=Finally%20achieved%20BlobStar%20status%21%20Mint%20your%20own%BlobStar%20NFT%20at%20https%3A//blobstar.io%20and%20check%20out%20the%20%23BlobStars_NFT%20collection%20at%20https%3A//opensea.com&hashtags=BlobStars_NFT%2CEIP-4844%2C%2CNFT%2CNFTart";
 
 export const termsLink = { name: "terms", href: "/terms" };
 
 export const ctaText = [
 	<span>
 		<span style={{ fontSize: "larger" }}>BlobStarsNFT</span> is a community of
-		10,000 uniquely generated NFTs blobin' out on the Base blockchain.
+		10,000 uniquely generated NFTs blobin' out on the Mumbai network.
 	</span>,
 	"They're blobs, so they live big, but they're cartoons, so they're fun and friendly (and even a bit mischievous)!",
-	"Follow us on Twitter & join our Discord for project updates.",
+	"Follow us on Twitter for project updates.",
 ];
 
 export const twitterPage = (
 	<a
-		href="https://twitter.com/rockstars_nft"
+		href="https://twitter.com/blobstars_nft"
 		className="external-link"
-		alt="rockstars_nft_twitter"
+		alt="blobstars_nft_twitter"
 		target="_blank"
 		rel="noreferrer"
 	>
@@ -50,7 +50,7 @@ export const twitterPage = (
 
 export const tikTokPage = (
 	<a
-		href="https://www.tiktok.com/@rockstars_nft"
+		href="https://www.tiktok.com/@blobstars_nft"
 		className="external-link"
 		alt="rockstars_nft_tik_tok"
 		target="_blank"

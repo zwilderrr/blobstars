@@ -1204,7 +1204,7 @@ abstract contract Ownable is Context {
     }
 }
 
-contract RockstarsNFT is ERC721Enumerable, Ownable {
+contract BlobStars_dev is ERC721Enumerable, Ownable {
   using Strings for uint256;
 
   string public baseURI;

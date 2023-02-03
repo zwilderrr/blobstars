@@ -2,9 +2,9 @@ import "./Header.css";
 
 import { useEffect, useState } from "react";
 
+import BlobStarsNFTJSON from "../contracts/BlobStars_dev.json";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../images/logo.svg";
-import RockstarsNFTJSON from "../contracts/RockstarsNFT.json";
 import Web3 from "web3";
 import detectEthereumProvider from "@metamask/detect-provider";
 import { socialMediaLinks } from "../content";
@@ -54,7 +54,7 @@ export function Header({
 		const [selectedAccount] = await web3.eth.getAccounts();
 
 		setContract(
-			new web3.eth.Contract(RockstarsNFTJSON.abi, contractAddress.rinkeby)
+			new web3.eth.Contract(BlobStarsNFTJSON.abi, contractAddress.rinkeby)
 		);
 		setConnectBtnText(formatAccount(selectedAccount) || CONNECT_WALLET);
 		setWeb3(web3);

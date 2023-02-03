@@ -1,7 +1,11 @@
-const RockstarsNFT = artifacts.require("RockstarsNFT");
+const BlobStars = artifacts.require("BlobStars");
 
-const baseUrlProd = "https://rockstars-nft.s3.us-east-2.amazonaws.com/";
+const baseUrl_dev = "https://rockstars-nft.s3.us-east-2.amazonaws.com/";
+const baseUrl_prod = "https://rockstars-nft.s3.us-east-2.amazonaws.com/";
 
 module.exports = async function (deployer, network) {
-	deployer.deploy(RockstarsNFT, "RockstarsNFT", "RSNFT", baseUrlProd);
+	// dev
+	deployer.deploy(BlobStars, "BlobStars_dev", "BLOB_dev", baseUrl_dev);
+	// prod
+	// deployer.deploy(BlobStars, "BlobStars", "BLOB", baseUrl_prod);
 };
