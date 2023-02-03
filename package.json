@@ -13,6 +13,7 @@
 		"@testing-library/react": "^11.2.7",
 		"@testing-library/user-event": "^12.8.3",
 		"@truffle/hdwallet-provider": "^1.5.1",
+		"alchemy-sdk": "^2.4.1",
 		"dotenv": "^10.0.0",
 		"react": "^17.0.2",
 		"react-countup": "^6.1.0",
