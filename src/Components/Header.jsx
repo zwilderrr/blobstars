@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 import BlobStarsNFTJSON from "../contracts/BlobStars_dev.json";
 import { Link } from "react-router-dom";
-import { ReactComponent as Logo } from "../images/logo.svg";
 import Web3 from "web3";
 import detectEthereumProvider from "@metamask/detect-provider";
 import { socialMediaLinks } from "../content";
@@ -12,11 +11,11 @@ import { socialMediaLinks } from "../content";
 let provider;
 let web3;
 
-const GET_METAMASK = "Get Metamask";
+const GET_COINBASE_WALLET = "Coinbase Wallet";
 const CONNECT_WALLET = "Connect Wallet";
-const METAMASK_EXTENSION_URL =
-	"https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en";
-const METAMASK_APP_URL = "https://metamask.io/download";
+export const COINBASE_EXTENSION_URL =
+	"https://chrome.google.com/webstore/detail/coinbase-wallet-extension/hnfanknocfeofbddgcijnmhnfnkdnaad?hl=en";
+export const COINBASE_WALLET_URL = "https://www.coinbase.com/wallet/downloads";
 
 const contractAddress = {
 	rinkeby: "0x0D8415b09CE63Edd8386D41283253A12B887a51c",
@@ -45,7 +44,7 @@ export function Header({
 		provider = await detectEthereumProvider({ timeout: 1000 });
 
 		if (!provider) {
-			setConnectBtnText(GET_METAMASK);
+			setConnectBtnText(GET_COINBASE_WALLET);
 			return;
 		}
 
@@ -92,12 +91,12 @@ export function Header({
 			return;
 		}
 
-		if (connectBtnText === GET_METAMASK) {
+		if (connectBtnText === GET_COINBASE_WALLET) {
 			if (isMobile) {
-				window.open(METAMASK_APP_URL, "_blank").focus();
+				window.open(COINBASE_WALLET_URL, "_blank").focus();
 				return;
 			}
-			window.open(METAMASK_EXTENSION_URL, "_blank").focus();
+			window.open(COINBASE_EXTENSION_URL, "_blank").focus();
 			setConnectBtnText(CONNECT_WALLET);
 			return;
 		}
@@ -129,7 +128,7 @@ export function Header({
 							target="_blank"
 							rel="noreferrer"
 						>
-							<i className={link.iconClass} alt={link.name} />
+							{link.component}
 						</a>
 					))}
 				</div>

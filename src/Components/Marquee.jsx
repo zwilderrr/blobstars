@@ -21,6 +21,7 @@ export function Marquee({ isMobile }) {
 							<ReactMarquee gradientWidth={0} speed={40 + 10 * i}>
 								{shuffle(images).map(src => (
 									<Image
+										key={src}
 										src={src}
 										style={{ width: isMobile ? "150px" : "200px" }}
 									/>

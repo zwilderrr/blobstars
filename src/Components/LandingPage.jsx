@@ -1,5 +1,6 @@
 import "./LandingPage.css";
 
+import { COINBASE_EXTENSION_URL, COINBASE_WALLET_URL } from "./Header";
 import { ctaText, rareText, whyText } from "../content";
 import { useEffect, useRef, useState } from "react";
 
@@ -94,13 +95,13 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 				<div className="fadeIn" style={{ animationDelay: "2.6s" }}>
 					On mobile? Go to blobstars.io on the{" "}
 					<a
-						href="https://metamask.io/download"
+						href={COINBASE_WALLET_URL}
 						className="external-link"
-						alt="metamask download"
+						alt="coinbase wallet download"
 						target="_blank"
 						rel="noreferrer"
 					>
-						Metamask
+						Coinbase wallet
 					</a>{" "}
 					app browser
 				</div>
@@ -113,13 +114,13 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 					Looks like you don't have a crypto wallet installed on your browser.
 					Download{" "}
 					<a
-						href="https://metamask.io/download"
+						href={COINBASE_EXTENSION_URL}
 						className="external-link"
-						alt="metamask download"
+						alt="coinbase wallet download"
 						target="_blank"
 						rel="noreferrer"
 					>
-						Metamask
+						Coinbase wallet extension
 					</a>{" "}
 					to get started.
 				</div>

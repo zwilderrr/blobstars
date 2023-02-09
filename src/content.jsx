@@ -1,3 +1,4 @@
+import { ReactComponent as TwitterIcon } from "./images/twitter.svg";
 import { scrollToTop } from "./Components/Header";
 
 export const socialMediaLinks = [
@@ -7,9 +8,9 @@ export const socialMediaLinks = [
 	// 	href: "https://discord.gg/Hb6EezYRCH",
 	// },
 	{
-		iconClass: "fab fa-twitter",
 		name: "twitter",
 		href: "https://twitter.com/blobstars_nft",
+		component: <TwitterIcon className="fab" alt="twitter" />,
 	},
 
 	// {
