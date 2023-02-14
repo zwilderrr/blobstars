@@ -10,7 +10,7 @@ const openSeaUrlDev = "https://testnets.opensea.io/account/rockstarsnftdev-v2";
 // 	"https://testnets.opensea.io/account/rockstars-nft-hotness-dev";
 const openSeaUrlProd = "https://opensea.io/account/rockstars-nft-hotness";
 
-const etherscanRinkeby = "https://rinkeby.etherscan.io/tx/";
+const polyscanMumbai = "https://mumbai.polygonscan.com/tx/";
 
 export function ContentModal({
 	txHash,

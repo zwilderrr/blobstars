@@ -23,9 +23,9 @@ export function MintButton({ Contract, web3, setTxHash, setTxError }) {
 		try {
 			const [from] = await web3.eth.requestAccounts();
 			const id = await web3.eth.net.getId();
-			if (id !== 4) {
+			if (id !== 80001) {
 				window.alert(
-					"Mint failed!\nNot connected to Rinkeby\nPlease switch to Rinkeby and try again"
+					"Mint failed!\n\nNot connected to Mumbai\n\nPlease switch to Mumbai and try again"
 				);
 				return;
 			}

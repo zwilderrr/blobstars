@@ -1212,7 +1212,7 @@ contract BlobStars_dev is ERC721Enumerable, Ownable {
   string public metaDataFolder = "metadata/";
   uint256 public cost = .05 ether;
   uint256 public maxSupply = 10000;
-  uint256 public maxMintAmount = 5;
+  uint256 public maxMintAmount = 10;
   bool public presale = false;
   bool public paused = false;
   mapping(address => bool) public allowlist;
@@ -1223,7 +1223,7 @@ contract BlobStars_dev is ERC721Enumerable, Ownable {
     string memory _initBaseURI
   ) ERC721(_name, _symbol) {
     setBaseURI(_initBaseURI);
-    mint(msg.sender, 5);
+    mint(msg.sender, 10);
   }
 
   // internal

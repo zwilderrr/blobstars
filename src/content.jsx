@@ -30,11 +30,13 @@ export const termsLink = { name: "terms", href: "/terms" };
 
 export const ctaText = [
 	<span>
-		<span style={{ fontSize: "larger" }}>BlobStarsNFT</span> is a community of
-		10,000 uniquely generated NFTs blobin' out on the Mumbai network.
+		<span style={{ fontSize: "larger" }}>BlobStarsNFT</span> is a bright bright
+		beacon of light for the kind crypto folks bringing important, but often
+		misunderstood, change to the world.
 	</span>,
-	"They're blobs, so they live big, but they're cartoons, so they're fun and friendly (and even a bit mischievous)!",
-	"Follow us on Twitter for project updates.",
+	"A blob is silly, but a BLOB (binary large object) is powerful. By combining the two into an NFT, we create a symbol of something that is fun and friendly, yet innovative and game-changing; something that from a distance--as a blob--looks like a useless mass of wasted space, but which up close--as a BLOB--is the data structure helping Ethereum scale to the next level and beyond.",
+	"Images, audio, video, and binary executable code, BLOBs effortlessly blend creativity and utility, form and function, beauty and substance. And at the very least, they make us smile. They restore our confidence. And they encourage us on our mission to bring blockchain to the world.",
+	"BlobStarsNFT is live on Mumbai testnet. Stay tuned and follow us on Twitter for project updates.",
 ];
 
 export const twitterPage = (
