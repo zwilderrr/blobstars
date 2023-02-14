@@ -5,10 +5,7 @@ import { Box, Fade, Modal } from "@mui/material";
 import React from "react";
 import { tweet } from "../content";
 
-const openSeaUrlDev = "https://testnets.opensea.io/account/rockstarsnftdev-v2";
-// const openSeaUrlDev =
-// 	"https://testnets.opensea.io/account/rockstars-nft-hotness-dev";
-const openSeaUrlProd = "https://opensea.io/account/rockstars-nft-hotness";
+const openSeaUrlDev = "https://testnets.opensea.io/collection/blobstars-dev";
 
 const polyscanMumbai = "https://mumbai.polygonscan.com/tx/";
 
@@ -53,19 +50,19 @@ export function ContentModal({
 				<div>
 					View your transaction on{" "}
 					<a
-						href={etherscanRinkeby + txHash}
+						href={polyscanMumbai + txHash}
 						className="external-link"
-						alt="mint rinkeby"
+						alt="mint mumbai"
 						target="_blank"
 						rel="noreferrer"
 					>
-						Etherscan
+						Polyscan
 					</a>{" "}
 					and head over to{" "}
 					<a
 						href={openSeaUrlDev}
 						className="external-link"
-						alt="mint rinkeby"
+						alt="opensea"
 						target="_blank"
 						rel="noreferrer"
 					>

@@ -24,7 +24,7 @@ export const socialMediaLinks = [
 ];
 
 export const tweet =
-	"https://twitter.com/intent/tweet?text=Finally%20achieved%20BlobStar%20status%21%20Mint%20your%20own%BlobStar%20NFT%20at%20https%3A//blobstar.io%20and%20check%20out%20the%20%23BlobStars_NFT%20collection%20at%20https%3A//opensea.com&hashtags=BlobStars_NFT%2CEIP-4844%2C%2CNFT%2CNFTart";
+	"https://twitter.com/intent/tweet?text=Finally%20achieved%20BlobStar%20status!%20Mint%20yours%20now%20at%20&url=https%3A%2F%2Fblobstars.io";
 
 export const termsLink = { name: "terms", href: "/terms" };
 
@@ -38,6 +38,9 @@ export const ctaText = [
 	"Images, audio, video, and binary executable code, BLOBs effortlessly blend creativity and utility, form and function, beauty and substance. And at the very least, they make us smile. They restore our confidence. And they encourage us on our mission to bring blockchain to the world.",
 	"BlobStarsNFT is live on Mumbai testnet. Stay tuned and follow us on Twitter for project updates.",
 ];
+
+export const tldr =
+	"BlobStarsNFT is a nod to EIP-4844 the and kind crypto folks bringing important change to the world.";
 
 export const twitterPage = (
 	<a
