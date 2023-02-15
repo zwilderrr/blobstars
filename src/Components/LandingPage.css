@@ -81,6 +81,20 @@
 	padding-top: 20px;
 }
 
+.support-text {
+	font-family: "Lobster";
+	font-size: 48px;
+	width: 80%;
+	padding-bottom: 60px;
+	text-align: center;
+	margin: auto;
+}
+
+.v-stack {
+	display: flex;
+	flex-direction: column;
+}
+
 @media only screen and (max-width: 1440px) {
 	.cta-text {
 		font-size: 16px;
@@ -111,6 +125,10 @@
 
 	.spacer {
 		flex: 0.5;
+	}
+
+	.support-text {
+		width: 100%;
 	}
 }
 
@@ -152,6 +170,10 @@
 	.row-short {
 		position: relative;
 		padding: 0;
+	}
+
+	.support-text {
+		font-size: 36px;
 	}
 }
 

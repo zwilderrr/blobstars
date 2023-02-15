@@ -26,16 +26,18 @@
 }
 
 .mint-btn {
-	background: white;
+	background: rgb(255, 161, 213);
 	border: solid thick black;
 	border-radius: 4vw;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+	transform: translateY(-2px);
 	color: black;
-	font-size: 40px;
+	font-size: 50px;
 	font-weight: bold;
-	padding-top: 60px;
-	padding-bottom: 60px;
-	padding-left: 120px;
-	padding-right: 120px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 100px;
+	padding-right: 100px;
 	margin-right: 20px;
 	transition: all 0.3s ease;
 }
@@ -43,6 +45,8 @@
 .mint-btn:disabled {
 	color: gray;
 	border-color: gray;
+	box-shadow: none;
+	transform: none;
 }
 
 .mint-btn:disabled:hover {
@@ -52,14 +56,15 @@
 
 .mint-btn:hover {
 	box-shadow: 0px 6px 5px 0px rgb(0, 0, 0, 0.4);
-	transform: translateY(-3px);
+	background: rgba(255, 161, 213, 0.75);
+	transform: translateY(-4px);
 	cursor: pointer;
 	transition: all 0.2s ease;
 }
 
 .mint-btn:active {
 	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
-	transform: translateY(-2px);
+	transform: translateY(-3px);
 	transition: all 0.1s;
 	cursor: pointer;
 }
@@ -72,15 +77,15 @@
 	/* animation: fadeIn 0.7s 2.6s forwards; */
 }
 
-@media only screen and (max-width: 1440px) {
+/* @media only screen and (max-width: 1440px) {
 	.mint-btn {
-		font-size: 30px;
+		font-size: 40px;
 	}
-}
+} */
 
 @media only screen and (max-width: 1200px) {
 	.mint-btn {
-		font-size: 30px;
+		font-size: 40px;
 	}
 }
 

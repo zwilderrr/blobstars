@@ -17,6 +17,8 @@
 .connect-btn:hover {
 	cursor: pointer;
 	border-color: white;
+	color: white;
+	transition: 0.3s;
 }
 
 .delay1s {

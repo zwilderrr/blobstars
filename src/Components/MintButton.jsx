@@ -5,7 +5,7 @@ import React, { useState } from "react";
 const metamaskProviderErrorCodes = [4001, 4100, 4200, 4900, 4901];
 
 export function MintButton({ Contract, web3, setTxHash, setTxError }) {
-	const MAX_COUNT = 5;
+	const MAX_COUNT = 10;
 	const [btnText, setBtnText] = useState();
 	const [minting, setMinting] = useState(false);
 	const [canMint, setCanMint] = useState(true);
@@ -74,7 +74,8 @@ export function MintButton({ Contract, web3, setTxHash, setTxError }) {
 	return (
 		<div className="mint-btn-wrapper">
 			<button className="mint-btn" onClick={onMint} disabled={disableButtons}>
-				{minting ? btnText : `Mint ${count} BlobStar${count > 1 ? "s" : ""}`}
+				{minting ? btnText : `Mint ${count}`}
+				{/* {minting ? btnText : `Mint ${count} BlobStar${count > 1 ? "s" : ""}`} */}
 			</button>
 			<div className="count-btn-wrapper">
 				<button
