@@ -151,12 +151,7 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 								</div>
 							))}
 						</div>
-						<MintButton
-							web3={web3}
-							Contract={Contract}
-							setTxHash={setTxHash}
-							setTxError={setTxError}
-						/>
+
 						{!isMobile && getHelperText()}
 					</div>
 					<div className="spacer" />
@@ -213,7 +208,15 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 			</div>
 
 			<div className="bgwhite">
-				<Timeline isMobile={isMobile} />
+				<div className="row">
+					<MintButton
+						web3={web3}
+						Contract={Contract}
+						setTxHash={setTxHash}
+						setTxError={setTxError}
+					/>
+					{/* <Timeline isMobile={isMobile} /> */}
+				</div>
 			</div>
 
 			<div>

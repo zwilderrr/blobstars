@@ -152,10 +152,9 @@ export const rareText = [
 // </div>,
 // ];
 export const whyText = [
-	"Images, audio, video, and binary executable code, BLOBs effortlessly blend creativity and utility, form and function, beauty and substance. And at the very least, they make us smile. They restore our confidence.",
-	"And they encourage us on our mission to bring blockchain to the world.",
-	"Rare, ultra-rare, and hyper-rare BlobStars are ready to blob and roll.",
-	"Mint one now and live the dream.",
+	"Images, audio, video, and binary executable code, BLOBs effortlessly blend creativity and utility, form and function, beauty and substance.",
+	"And at the very least, they make us smile.",
+	"They restore our confidence, and they encourage us on our mission to bring blockchain to the world.",
 ];
 // export const whyText = [
 // 	"That's the ethos we wanted to bring to the world, and that's why we created BlobStarsNFT. They're blobs, so they live big, but they're cartoons, so they're fun and friendly (and even a bit mischievous)!",

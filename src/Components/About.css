@@ -18,8 +18,12 @@
 	font-weight: bolder;
 }
 
-.about-title {
+.about-title,
+.about-title2 {
 	font-size: 18px;
+}
+
+.about-title2 {
 	padding-bottom: 5px;
 }
 
