@@ -30,13 +30,10 @@ export const termsLink = { name: "terms", href: "/terms" };
 
 export const ctaText = [
 	<span>
-		<span style={{ fontSize: "larger" }}>BlobStarsNFT</span> is a bright bright
-		beacon of light for the kind crypto folks bringing important, but often
-		misunderstood, change to the world.
+		<span style={{ fontSize: "larger" }}>BlobStarsNFT</span> is a nod to
+		EIP-4844 and a bright beacon of light for the kind crypto folks bringing
+		important, but often misunderstood, change to the world.
 	</span>,
-	"A blob is silly, but a BLOB (binary large object) is powerful. By combining the two into an NFT, we create a symbol of something that is fun and friendly, yet innovative and game-changing; something that from a distance--as a blob--looks like a useless mass of wasted space, but which up close--as a BLOB--is the data structure helping Ethereum scale to the next level and beyond.",
-	"Images, audio, video, and binary executable code, BLOBs effortlessly blend creativity and utility, form and function, beauty and substance. And at the very least, they make us smile. They restore our confidence. And they encourage us on our mission to bring blockchain to the world.",
-	"BlobStarsNFT is live on Mumbai testnet. Stay tuned and follow us on Twitter for project updates.",
 ];
 
 export const tldr =
@@ -126,12 +123,16 @@ export const timelineText = [
 // ];
 
 export const rareText = [
-	"When you mint a BlobStar, you mint a vote for humanity. You proudly state that life is not a zero-sum game. It's a game of big and little triumphs, big and little acts of kindness, and it is only won when everyone wins.",
-	<span>
-		When you <i>are</i> a BlobStar, you're a good person living an epic
-		life—even if epic just means treating the local barista really nicely.
-	</span>,
+	"A blob is silly, but a BLOB (binary large object) is powerful.",
+	"By combining the two into an NFT, we create a symbol of something that is fun and friendly, yet innovative and game-changing; something that from a distance--as a blob--looks like a useless bunch of wasted space, but which up close--as a BLOB--is the data structure helping Ethereum scale to the next level and beyond.",
 ];
+// export const rareText = [
+// 	"When you mint a BlobStar, you mint a vote for humanity. You proudly state that life is not a zero-sum game. It's a game of big and little triumphs, big and little acts of kindness, and it is only won when everyone wins.",
+// 	<span>
+// 		When you <i>are</i> a BlobStar, you're a good person living an epic
+// 		life—even if epic just means treating the local barista really nicely.
+// 	</span>,
+// ];
 // "Life isn't a choice between being rich and powerful but not a nice person doing not nice things, or being kind and giving but feeling small and unimportant.",
 
 // export const whyText = [
@@ -151,10 +152,16 @@ export const rareText = [
 // </div>,
 // ];
 export const whyText = [
-	"That's the ethos we wanted to bring to the world, and that's why we created BlobStarsNFT. They're blobs, so they live big, but they're cartoons, so they're fun and friendly (and even a bit mischievous)!",
+	"Images, audio, video, and binary executable code, BLOBs effortlessly blend creativity and utility, form and function, beauty and substance. And at the very least, they make us smile. They restore our confidence.",
+	"And they encourage us on our mission to bring blockchain to the world.",
 	"Rare, ultra-rare, and hyper-rare BlobStars are ready to blob and roll.",
-	// "Mint one now and live the dream.",
+	"Mint one now and live the dream.",
 ];
+// export const whyText = [
+// 	"That's the ethos we wanted to bring to the world, and that's why we created BlobStarsNFT. They're blobs, so they live big, but they're cartoons, so they're fun and friendly (and even a bit mischievous)!",
+// 	"Rare, ultra-rare, and hyper-rare BlobStars are ready to blob and roll.",
+// 	// "Mint one now and live the dream.",
+// ];
 
 // export const whyText = "Gain instant access to a community of epic people living epic lives.",
 
