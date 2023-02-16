@@ -211,7 +211,7 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 				<div className="row v-stack">
 					<div className="support-text">
 						Mint a BlobStar now to show your support for good people doing good
-						things
+						things. Currently live on Mumbai testnet.
 					</div>
 					<MintButton
 						web3={web3}
