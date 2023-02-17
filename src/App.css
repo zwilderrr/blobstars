@@ -13,6 +13,10 @@
 	font-family: "Lobster";
 }
 
+.header .logo-text:hover {
+	cursor: pointer;
+}
+
 @media only screen and (max-width: 768px) {
 	.logo-text {
 		font-size: 36px;

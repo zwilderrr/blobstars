@@ -114,9 +114,11 @@ export function Header({
 
 	return (
 		<div className={`header ${shrink ? "shadow" : ""}`}>
-			<Link to="/">
+			<span
+				onClick={() => window.scrollTo({ behavior: "smooth", top: 0, left: 0 })}
+			>
 				<div className="logo-text">B</div>
-			</Link>
+			</span>
 
 			<div className="links-wrapper">
 				<div className="links">
