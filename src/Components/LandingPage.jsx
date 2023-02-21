@@ -10,9 +10,9 @@ import { ReactComponent as Heading } from "../images/heading-text.svg";
 import { Marquee } from "./Marquee";
 import { MintButton } from "./MintButton";
 import { Timeline } from "./Timeline";
+import blobstarMain from "../images/blobstar-main.png";
 import heat from "../images/heat.png";
 import multicolor from "../images/multicolor.png";
-import rockstarMain from "../images/rockstar-main.png";
 
 export const useOnScreen = (ref, cb, isMobile = false) => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -81,13 +81,13 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 
 	const [txHash, setTxHash] = useState();
 	const [modalOpen, setModalOpen] = useState(false);
-	const [txError, setTxError] = useState(false);
+	const [txStatus, setTxStatus] = useState("");
 
 	useEffect(() => {
-		if (txHash || txError) {
+		if (txStatus) {
 			setModalOpen(true);
 		}
-	}, [txHash, txError]);
+	}, [txStatus]);
 
 	function getHelperText() {
 		if (isMobile) {
@@ -138,7 +138,7 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 					<Heading />
 				</div>
 				<div className="row">
-					{isMobile && <Image src={rockstarMain} />}
+					{isMobile && <Image src={blobstarMain} />}
 					<div className="col-left">
 						<div className="cta-text-wrapper">
 							{ctaText.map((line, i) => (
@@ -156,7 +156,7 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 					</div>
 					<div className="spacer" />
 					<div className="col-right">
-						{!isMobile && <Image src={rockstarMain} />}
+						{!isMobile && <Image src={blobstarMain} />}
 						{/* {isMobile && getHelperText()} */}
 					</div>
 				</div>
@@ -211,16 +211,14 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 				<div className="row v-stack">
 					<div className="support-text" style={{ paddingBottom: 10 }}>
 						Mint a BlobStar now to show your support for good people doing good
-						things.
+						things!
 					</div>
-					<div className="support-text">
-						Currently live on [redacted] testnet.
-					</div>
+					<div className="support-text">Currently live on Goerli testnet.</div>
 					<MintButton
 						web3={web3}
 						Contract={Contract}
 						setTxHash={setTxHash}
-						setTxError={setTxError}
+						setTxStatus={setTxStatus}
 					/>
 					{/* <Timeline isMobile={isMobile} /> */}
 				</div>
@@ -233,8 +231,8 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 			<ContentModal
 				modalOpen={modalOpen}
 				txHash={txHash}
-				txError={txError}
-				setTxError={setTxError}
+				txStatus={txStatus}
+				setTxStatus={setTxStatus}
 				setModalOpen={setModalOpen}
 				isMobile={isMobile}
 			/>

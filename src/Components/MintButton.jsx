@@ -2,9 +2,7 @@ import "./MintButton.css";
 
 import React, { useState } from "react";
 
-const metamaskProviderErrorCodes = [4001, 4100, 4200, 4900, 4901];
-
-export function MintButton({ Contract, web3, setTxHash, setTxError }) {
+export function MintButton({ Contract, web3, setTxHash, setTxStatus }) {
 	const MAX_COUNT = 10;
 	const [btnText, setBtnText] = useState();
 	const [minting, setMinting] = useState(false);
@@ -40,28 +38,32 @@ export function MintButton({ Contract, web3, setTxHash, setTxError }) {
 				})
 				.once("sending", res => {
 					setCanMint(false);
+					setTxStatus("awaitingSignature");
 					console.log("sending", res);
 				})
-				.once("sent", res => console.log("sent", res))
+				.once("sent", res => {
+					setTxStatus("sent");
+					console.log("sent", res);
+				})
 				.once("transactionHash", res => {
 					console.log("transactionHash", res);
 					setMinting(true);
-					setBtnText("Minting! Get pumped");
+					setTxStatus("minting");
 				})
-				.once("receipt", res => console.log("receipt", res))
+				.once("receipt", res => {
+					console.log("receipt", res);
+				})
 				.on("confirmation", res => console.log("confirmation", res))
 				.on("error", res => {
 					setMinting(false);
 					setCanMint(true);
-					if (!metamaskProviderErrorCodes.includes(res.code)) {
-						setTxError(true);
-					}
+					setTxStatus("error");
 					console.log("error", res);
 				})
 				.then(res => {
-					setBtnText("");
 					setMinting(false);
 					setCanMint(true);
+					setTxStatus("complete");
 					setTxHash(res.transactionHash);
 				});
 		} catch (e) {
@@ -74,8 +76,7 @@ export function MintButton({ Contract, web3, setTxHash, setTxError }) {
 	return (
 		<div className="mint-btn-wrapper">
 			<button className="mint-btn" onClick={onMint} disabled={disableButtons}>
-				{minting ? btnText : `Mint ${count}`}
-				{/* {minting ? btnText : `Mint ${count} BlobStar${count > 1 ? "s" : ""}`} */}
+				Mint {count}
 			</button>
 			<div className="count-btn-wrapper">
 				<button

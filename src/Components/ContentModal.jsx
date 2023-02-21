@@ -5,16 +5,16 @@ import { Box, Fade, Modal } from "@mui/material";
 import React from "react";
 import { tweet } from "../content";
 
-const openSeaUrlDev = "https://testnets.opensea.io/collection/blobstars-dev";
+const openSeaUrlDev = "https://testnets.opensea.io/collection/blobstars-dev-2";
 
-const polyscanMumbai = "https://mumbai.polygonscan.com/tx/";
+const goerliScan = "https://goerli.etherscan.io/tx/";
 
 export function ContentModal({
 	txHash,
-	txError,
-	setTxError,
+	txStatus,
 	modalOpen,
 	setModalOpen,
+	setTxStatus,
 }) {
 	const style = {
 		position: "absolute",
@@ -31,9 +31,9 @@ export function ContentModal({
 	};
 
 	const content = {
-		success: (
+		complete: (
 			<>
-				<h1 className="modal-header"> Success!</h1>
+				<h1 className="modal-header">Success!</h1>
 				<div>
 					<a
 						href={tweet}
@@ -50,13 +50,13 @@ export function ContentModal({
 				<div>
 					View your transaction on{" "}
 					<a
-						href={polyscanMumbai + txHash}
+						href={goerliScan + txHash}
 						className="external-link"
 						alt="mint mumbai"
 						target="_blank"
 						rel="noreferrer"
 					>
-						Polyscan
+						Goerli scan
 					</a>{" "}
 					and head over to{" "}
 					<a
@@ -72,6 +72,24 @@ export function ContentModal({
 				</div>
 			</>
 		),
+		awaitingSignature: (
+			<>
+				<h1 className="modal-header">Sending</h1>
+				<div>Waiting for your signature.</div>
+			</>
+		),
+		sent: (
+			<>
+				<h1 className="modal-header">Sent</h1>
+				<div>Your transaction has been sent to the network.</div>
+			</>
+		),
+		minting: (
+			<>
+				<h1 className="modal-header">Minting</h1>
+				<div>Your BlobStar is minting! Get pumped!</div>
+			</>
+		),
 		error: (
 			<>
 				<h1 className="modal-header">Error</h1>
@@ -83,12 +101,10 @@ export function ContentModal({
 		),
 	};
 
-	const txStatus = txError ? "error" : txHash ? "success" : "";
-
 	function closeModal(_, reason) {
 		if (!reason || reason === "escapeKeyDown") {
 			setModalOpen(false);
-			setTxError(false);
+			setTxStatus("");
 		}
 	}
 

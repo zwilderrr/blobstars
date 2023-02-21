@@ -4,7 +4,7 @@ import { Image } from "./LandingPage";
 import React from "react";
 import ReactMarquee from "react-fast-marquee";
 
-const S3_URL = "https://rockstars-nft-dev.s3.us-east-2.amazonaws.com/images/";
+const S3_URL = "https://blobstars-dev.s3.us-east-2.amazonaws.com/images/";
 
 const images = Array(300)
 	.fill("")

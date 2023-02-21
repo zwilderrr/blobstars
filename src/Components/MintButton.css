@@ -7,7 +7,7 @@
 }
 
 .count-btn:hover {
-	color: rgb(255, 161, 213);
+	color: rgba(255, 161, 213, 0.75);
 	cursor: pointer;
 }
 

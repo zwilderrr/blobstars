@@ -18,7 +18,7 @@ export const COINBASE_EXTENSION_URL =
 export const COINBASE_WALLET_URL = "https://www.coinbase.com/wallet/downloads";
 
 const contractAddress = {
-	mumbai: "0xC3050cF9704A46efdeb8DcEC6F9687942518A9C7",
+	goerli: "0x8465c44BD3ca5dD497FE725E91b788Acc6C3b452",
 	local: "0xa93Ae522784Bf2Ae7B13542f9971A2D029d3D93b",
 };
 
@@ -53,7 +53,7 @@ export function Header({
 		const [selectedAccount] = await web3.eth.getAccounts();
 
 		setContract(
-			new web3.eth.Contract(BlobStarsNFTJSON.abi, contractAddress.mumbai)
+			new web3.eth.Contract(BlobStarsNFTJSON.abi, contractAddress.goerli)
 		);
 		setConnectBtnText(formatAccount(selectedAccount) || CONNECT_WALLET);
 		setWeb3(web3);

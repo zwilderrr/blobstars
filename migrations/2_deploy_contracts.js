@@ -1,7 +1,7 @@
 const BlobStars_dev = artifacts.require("BlobStars_dev");
 
-const baseUrl_dev = "https://rockstars-nft-dev.s3.us-east-2.amazonaws.com/";
-const baseUrl_prod = "https://rockstars-nft.s3.us-east-2.amazonaws.com/";
+const baseUrl_dev = "https://blobstars-dev.s3.us-east-2.amazonaws.com/";
+const baseUrl_prod = "https://blobstars.s3.us-east-2.amazonaws.com/";
 
 module.exports = async function (deployer, network) {
 	// dev
