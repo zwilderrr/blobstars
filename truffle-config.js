@@ -14,39 +14,36 @@ module.exports = {
 	 */
 
 	networks: {
-		development: {
-			host: "127.0.0.1", // Localhost (default: none)
-			port: 8545, // Standard Ethereum port (default: none)
-			network_id: "*", // Any network (default: none)
-		},
-		matic: {
-			provider: () =>
-				new HDWalletProvider(
-					mnemonic,
-					`https://polygon-mumbai.g.alchemy.com/v2/fPYxg-eb_Do-isYW5u1RzymaBCAbxDwQ`
-				),
-			network_id: 80001,
-			confirmations: 2,
-			timeoutBlocks: 200,
-			skipDryRun: true,
-		},
+		// matic: {
+		// 	provider: () =>
+		// 		new HDWalletProvider(mnemonic, `https://rpc-mumbai.maticvigil.com`),
+		// 	network_id: 80001,
+		// 	confirmations: 2,
+		// 	timeoutBlocks: 200,
+		// 	skipDryRun: true,
+		// },
 		// Useful for testing. The `development` name is special - truffle uses it by default
 		// if it's defined here and no other network is specified at the command line.
 		// You should run a client (like ganache, geth, or parity) in a separate terminal
 		// tab if you use this network and you must also set the `host`, `port` and `network_id`
 		// options below to some value.
 		//
-		// development: {
-		//  host: "127.0.0.1",     // Localhost (default: none)
-		//  port: 8545,            // Standard Ethereum port (default: none)
-		//  network_id: "*",       // Any network (default: none)
-		// },
-		//
-		// goerli: {
-		//   provider: () => new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${infuraProjectId}`),
-		//   network_id: 5,       // Goerli's id
-		//   chain_id: 5
-		// }
+		develop: {
+			host: "127.0.0.1", // Localhost (default: none)
+			port: 8545, // Standard Ethereum port (default: none)
+			network_id: "*", // Any network (default: none)
+			total_accounts: 11,
+		},
+
+		goerli: {
+			provider: () =>
+				new HDWalletProvider(
+					mnemonic,
+					"https://eth-goerli.g.alchemy.com/v2/tDgk-BBsMt6IuBHWVZKDka2it_52oTuf"
+				),
+			network_id: 5, // Goerli's id
+			chain_id: 5,
+		},
 	},
 
 	// Set default mocha options here, use special reporters etc.

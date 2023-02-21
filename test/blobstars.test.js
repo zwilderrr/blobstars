@@ -1,22 +1,23 @@
-const RockstarsNFT = artifacts.require("RockstarsNFT");
+const BlobStars_dev = artifacts.require("BlobStars_dev");
 const truffleAssert = require("truffle-assertions");
 
-contract("RockstarsNFT", function (accounts) {
+contract("BlobStars_dev", function (accounts) {
 	let instance;
 	let owner;
 
 	before("setup the contract instance and owner", async () => {
-		instance = await RockstarsNFT.deployed();
+		instance = await BlobStars_dev.deployed();
 		owner = await instance.owner();
 	});
 
-	it("should mint 5 to the owner", async () => {
+	it("should mint 10 to the owner", async () => {
 		const walletOfOwner = await instance.walletOfOwner(owner);
-		assert.equal(walletOfOwner.length, 5);
+		assert.equal(walletOfOwner.length, 10);
 	});
 
-	it("should successfully mint up to 5 at a time", async () => {
-		for (let i = 2; i <= 5; i++) {
+	it("should successfully mint up to 10 at a time", async () => {
+		// i = 2 so we skip the owners account
+		for (let i = 2; i <= 10; i++) {
 			const from = accounts[i - 1];
 			await instance.mint(from, i);
 			const walletOfOwner = await instance.walletOfOwner(from);
@@ -24,16 +25,16 @@ contract("RockstarsNFT", function (accounts) {
 		}
 	});
 
-	it("should not permit minting more than 5 at a time", async () => {
+	it("should not permit minting more than 10 at a time", async () => {
 		await truffleAssert.reverts(
-			instance.mint(accounts[1], 6),
+			instance.mint(accounts[1], 11),
 			"revert",
-			"Can't mint more than 5"
+			"Can't mint more than 10"
 		);
 	});
 
 	it("should increase total supply by amount minted", async () => {
-		for (let i = 1; i <= 5; i++) {
+		for (let i = 1; i <= 10; i++) {
 			let supply = await instance.totalSupply();
 			supply = bigToNum(supply);
 			await instance.mint(accounts[i], i);
@@ -74,34 +75,10 @@ contract("RockstarsNFT", function (accounts) {
 		await instance.mint(owner, 1);
 	});
 
-	it("should require payment during presale for allowlisted accounts", async () => {
-		const [a3, a4, a5] = [accounts[3], accounts[4], accounts[5]];
-		const allowlist = [a3, a4];
-		await instance.allowlistUser(allowlist);
-		await instance.togglePresale(true);
-
-		// should fail because a3 isn't sending any ether with the request, even though allowlisted
-		await truffleAssert.reverts(instance.mint(a3, 1, { from: a3 }), "revert");
-		await instance.mint(a3, 1, { from: a3, value: 1000000000000000000 });
-
-		// should fail because a5 isn't allowlisted, even though sending ether
-		await truffleAssert.reverts(
-			instance.mint(a5, 1, { from: a5, value: 1000000000000000000 }),
-			"revert"
-		);
-
-		await instance.togglePresale(false);
-		instance.mint(a5, 1, { from: a5, value: 1000000000000000000 });
-		// presale has ended so now allowlist is a freemint list
-		instance.mint(a4, 1, { from: a4 });
-	});
-
-	it("should not require payment from allowlisted accounts if not in presale state", async () => {
+	it("should not require payment from allowlisted accounts", async () => {
 		const a5 = accounts[5];
-		await instance.allowlistUser([a5]);
-		await instance.togglePresale(true);
 		await truffleAssert.reverts(instance.mint(a5, 1, { from: a5 }), "revert");
-		await instance.togglePresale(false);
+		await instance.allowlistUser([a5]);
 		instance.mint(a5, 1, { from: a5 });
 	});
 
@@ -128,30 +105,36 @@ describe("Test web3", function () {
 	let Contract;
 
 	before("setup the contract instance and owner", async () => {
-		instance = await RockstarsNFT.deployed();
+		instance = await BlobStars_dev.deployed();
 		owner = await instance.owner();
 		accounts = await web3.eth.getAccounts();
-		Contract = new web3.eth.Contract(RockstarsNFT._json.abi, instance.address);
+		Contract = new web3.eth.Contract(BlobStars_dev._json.abi, instance.address);
 	});
 
-	it("should successfully mint up to 5 at a time", async () => {
+	it("should successfully mint up to 10 at a time", async () => {
 		const cost = await Contract.methods.cost().call();
-		for (let i = 2; i <= 5; i++) {
+		// i = 2 so we skip the owner's account
+		for (let i = 2; i <= 10; i++) {
 			const from = accounts[i - 1];
 			const value = cost * i;
 			let beforeMint = await instance.walletOfOwner(from);
-			await Contract.methods.mint(from, i).send({ from, value, gas: 1000000 });
+			await Contract.methods.mint(from, i).send({
+				from,
+				value,
+				// max gas per block
+				gas: web3.utils.hexToNumber(0x6691b7).toString(),
+			});
 			const afterMint = await instance.walletOfOwner(from);
 			assert.equal(afterMint.length, beforeMint.length + i);
 		}
 	});
 
-	it("should not permit minting more than 5 at a time", async () => {
+	it("should not permit minting more than 10 at a time", async () => {
 		const cost = await Contract.methods.cost().call();
 		const from = accounts[2];
-		const value = cost * 6;
+		const value = cost * 11;
 		await truffleAssert.reverts(
-			Contract.methods.mint(from, 6).send({ from, value, gas: 1000000 }),
+			Contract.methods.mint(from, 11).send({ from, value, gas: 1000000 }),
 			"revert",
 			"Can't mint more than 10"
 		);
