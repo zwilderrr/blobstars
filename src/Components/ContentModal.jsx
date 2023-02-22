@@ -40,7 +40,7 @@ export function ContentModal({
 	const content = {
 		complete: (
 			<>
-				<h1 className="modal-header">Success!</h1>
+				<h1>Success!</h1>
 				<div>
 					<a
 						href={tweet}
@@ -81,25 +81,25 @@ export function ContentModal({
 		),
 		awaitingSignature: (
 			<>
-				<h1 className="modal-header">Confirming</h1>
+				<h1>Confirming</h1>
 				<div>Waiting for you to confirm the transaction..</div>
 			</>
 		),
 		sent: (
 			<>
-				<h1 className="modal-header">Sent</h1>
+				<h1>Sent</h1>
 				<div>Your transaction has been sent to the network.</div>
 			</>
 		),
 		minting: (
 			<>
-				<h1 className="modal-header">Minting</h1>
+				<h1>Minting</h1>
 				<div>Your BlobStar is minting!</div>
 			</>
 		),
 		error: (
 			<>
-				<h1 className="modal-header">Error</h1>
+				<h1>Error</h1>
 				<div>
 					There was an error minting your BlobStar. You've been refunded all ETH
 					sent (minus gas fees).

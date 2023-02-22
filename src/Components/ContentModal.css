@@ -7,6 +7,6 @@
 	font-size: 25px;
 }
 
-.modal-header {
-	/* padding-bottom: 10px; */
+.close-button:hover {
+	cursor: pointer;
 }
