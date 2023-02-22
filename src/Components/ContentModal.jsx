@@ -1,6 +1,6 @@
 import "./ContentModal.css";
 
-import { Box, Fade, Modal } from "@mui/material";
+import { Box, CircularProgress, Fade, Modal } from "@mui/material";
 
 import React from "react";
 import { tweet } from "../content";
@@ -28,6 +28,13 @@ export function ContentModal({
 		borderRadius: 2,
 		fontWeight: "bold",
 		border: "solid thick rgb(255, 161, 213)",
+	};
+
+	const loadingStyle = {
+		display: "flex",
+		justifyContent: "center",
+		paddingTop: 40,
+		paddingBottom: 20,
 	};
 
 	const content = {
@@ -74,8 +81,8 @@ export function ContentModal({
 		),
 		awaitingSignature: (
 			<>
-				<h1 className="modal-header">Sending</h1>
-				<div>Waiting for your signature.</div>
+				<h1 className="modal-header">Confirming</h1>
+				<div>Waiting for you to confirm the transaction..</div>
 			</>
 		),
 		sent: (
@@ -87,7 +94,7 @@ export function ContentModal({
 		minting: (
 			<>
 				<h1 className="modal-header">Minting</h1>
-				<div>Your BlobStar is minting! Get pumped!</div>
+				<div>Your BlobStar is minting!</div>
 			</>
 		),
 		error: (
@@ -121,6 +128,11 @@ export function ContentModal({
 						x
 					</button>
 					{content[txStatus]}
+					{!txHash && txStatus !== "error" && (
+						<Box style={loadingStyle}>
+							<CircularProgress />
+						</Box>
+					)}
 				</Box>
 			</Fade>
 		</Modal>
