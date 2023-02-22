@@ -32,8 +32,8 @@ export const ctaText = [
 	<span>
 		<span style={{ fontSize: "larger" }}>BlobStarsNFT</span> is a community of
 		4,844 NFTs blobin' out on the [redacted] L2. They're a nod to EIP-4844 and a
-		bright beacon of light for the kind crypto folks bringing important but
-		often misunderstood change to the world.
+		bright beacon of light for the kind crypto folks bringing important, but
+		often misunderstood, change to the world.
 	</span>,
 ];
 

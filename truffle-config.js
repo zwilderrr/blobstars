@@ -35,6 +35,16 @@ module.exports = {
 			total_accounts: 11,
 		},
 
+		baseGoerli: {
+			provider: () =>
+				new HDWalletProvider(
+					mnemonic,
+					"https://eth-goerli.g.alchemy.com/v2/tDgk-BBsMt6IuBHWVZKDka2it_52oTuf"
+				),
+			network_id: 5, // Goerli's id
+			chain_id: 84531,
+		},
+
 		goerli: {
 			provider: () =>
 				new HDWalletProvider(
