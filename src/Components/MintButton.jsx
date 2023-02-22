@@ -21,9 +21,9 @@ export function MintButton({ Contract, web3, setTxHash, setTxStatus }) {
 		try {
 			const [from] = await web3.eth.requestAccounts();
 			const id = await web3.eth.net.getId();
-			if (id !== 5) {
+			if (id !== 84531) {
 				window.alert(
-					"Mint failed!\n\nNot connected to the Goerli network.\n\nPlease switch to Goerli and try again."
+					"Mint failed!\n\nNot connected to the [redacted] network.\n\nPlease switch to [redacted] and try again."
 				);
 				return;
 			}

@@ -20,6 +20,7 @@ export const COINBASE_WALLET_URL = "https://www.coinbase.com/wallet/downloads";
 const contractAddress = {
 	goerli: "0x8465c44BD3ca5dD497FE725E91b788Acc6C3b452",
 	local: "0xa93Ae522784Bf2Ae7B13542f9971A2D029d3D93b",
+	baseTestnet: "0x96A66C81A56C3BB0fcC1BDFEaa3131e287022E90",
 };
 
 export function scrollToTop(top = 0) {
@@ -53,7 +54,7 @@ export function Header({
 		const [selectedAccount] = await web3.eth.getAccounts();
 
 		setContract(
-			new web3.eth.Contract(BlobStarsNFTJSON.abi, contractAddress.goerli)
+			new web3.eth.Contract(BlobStarsNFTJSON.abi, contractAddress.baseTestnet)
 		);
 		setConnectBtnText(formatAccount(selectedAccount) || CONNECT_WALLET);
 		setWeb3(web3);
