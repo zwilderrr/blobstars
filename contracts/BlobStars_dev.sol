@@ -11,8 +11,8 @@ contract BlobStars_dev is ERC721Enumerable, Ownable {
   string public baseURI;
   string public baseExtension = ".json";
   string public metaDataFolder = "metadata/";
-  uint256 public cost = .05 ether;
-  uint256 public maxSupply = 8453;
+  uint256 public cost = .01 ether;
+  uint256 public maxSupply = 4844;
   uint256 public maxMintAmount = 10;
   bool public paused = false;
   mapping(address => bool) public allowlist;
