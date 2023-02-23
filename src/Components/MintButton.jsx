@@ -4,8 +4,6 @@ import React, { useState } from "react";
 
 export function MintButton({ Contract, web3, setTxHash, setTxStatus }) {
 	const MAX_COUNT = 10;
-	const [btnText, setBtnText] = useState();
-	const [minting, setMinting] = useState(false);
 	const [canMint, setCanMint] = useState(true);
 	const [count, setCount] = useState(1);
 
@@ -23,7 +21,7 @@ export function MintButton({ Contract, web3, setTxHash, setTxStatus }) {
 			const id = await web3.eth.net.getId();
 			if (id !== 84531) {
 				window.alert(
-					"Mint failed!\n\nNot connected to the [redacted] network.\n\nPlease switch to [redacted] and try again."
+					"Not connected to the Base network.\n\nPlease switch to Base and try again."
 				);
 				return;
 			}
@@ -47,7 +45,6 @@ export function MintButton({ Contract, web3, setTxHash, setTxStatus }) {
 				})
 				.once("transactionHash", res => {
 					console.log("transactionHash", res);
-					setMinting(true);
 					setTxStatus("minting");
 				})
 				.once("receipt", res => {
@@ -55,13 +52,11 @@ export function MintButton({ Contract, web3, setTxHash, setTxStatus }) {
 				})
 				.on("confirmation", res => console.log("confirmation", res))
 				.on("error", res => {
-					setMinting(false);
 					setCanMint(true);
 					setTxStatus("error");
 					console.log("error", res);
 				})
 				.then(res => {
-					setMinting(false);
 					setCanMint(true);
 					setTxStatus("complete");
 					setTxHash(res.transactionHash);
