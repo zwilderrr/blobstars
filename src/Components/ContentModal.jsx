@@ -6,8 +6,10 @@ import React from "react";
 import { tweet } from "../content";
 
 const openSeaUrlDev = "https://testnets.opensea.io/collection/blobstars-dev-2";
+const blockscoutTestnetInventory =
+	"https://base-goerli.blockscout.com/token/0x24Fc73d294Ff3b9beC76e875213d855d26Dd5290?tab=inventory";
 
-const goerliScan = "https://goerli.etherscan.io/tx/";
+const baseTestnetBlockScout = "https://base-goerli.blockscout.com/tx/";
 
 export function ContentModal({
 	txHash,
@@ -40,32 +42,30 @@ export function ContentModal({
 	const content = {
 		complete: (
 			<>
-				<h1>Success!</h1>
-				<div>
-					<a
-						href={tweet}
-						className="external-link"
-						alt="twitter"
-						target="_blank"
-						rel="noreferrer"
-					>
-						Share
-					</a>{" "}
-					your new BlobStar status on Twitter
-				</div>
-				<br />
-				<div>
+				<h1 className="heading">Success</h1>
+				<div style={{ paddingBottom: 12 }}>
 					View your transaction on{" "}
 					<a
-						href={goerliScan + txHash}
+						href={baseTestnetBlockScout + txHash}
 						className="external-link"
-						alt="mint mumbai"
+						alt="blockscout"
 						target="_blank"
 						rel="noreferrer"
 					>
-						Goerli scan
+						Blockscout
 					</a>{" "}
-					and head over to{" "}
+					and check out the full inventory{" "}
+					<a
+						href={blockscoutTestnetInventory}
+						className="external-link"
+						alt="blockscout"
+						target="_blank"
+						rel="noreferrer"
+					>
+						here
+					</a>
+					.
+					{/* and head over to{" "}
 					<a
 						href={openSeaUrlDev}
 						className="external-link"
@@ -75,31 +75,44 @@ export function ContentModal({
 					>
 						OpenSea
 					</a>{" "}
-					to check out your BlobStar (may take a few minutes to display)
+					to check out your BlobStar (may take a few minutes to display) */}
+				</div>
+				<div>
+					Share your new BlobStar on{" "}
+					<a
+						href={tweet}
+						className="external-link"
+						alt="twitter"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Twitter
+					</a>
+					!
 				</div>
 			</>
 		),
 		awaitingSignature: (
 			<>
-				<h1>Confirming</h1>
+				<h1 className="heading">Confirming</h1>
 				<div>Waiting for you to confirm the transaction..</div>
 			</>
 		),
 		sent: (
 			<>
-				<h1>Sent</h1>
+				<h1 className="heading">Sent</h1>
 				<div>Your transaction has been sent to the network.</div>
 			</>
 		),
 		minting: (
 			<>
-				<h1>Minting</h1>
+				<h1 className="heading">Minting</h1>
 				<div>Your BlobStar is minting!</div>
 			</>
 		),
 		error: (
 			<>
-				<h1>Error</h1>
+				<h1 className="heading">Error</h1>
 				<div>
 					There was an error minting your BlobStar. You've been refunded all ETH
 					sent (minus gas fees).

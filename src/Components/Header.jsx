@@ -20,7 +20,7 @@ export const COINBASE_WALLET_URL = "https://www.coinbase.com/wallet/downloads";
 const contractAddress = {
 	goerli: "0x8465c44BD3ca5dD497FE725E91b788Acc6C3b452",
 	local: "0xa93Ae522784Bf2Ae7B13542f9971A2D029d3D93b",
-	baseTestnet: "0x96A66C81A56C3BB0fcC1BDFEaa3131e287022E90",
+	baseTestnet: "0x24Fc73d294Ff3b9beC76e875213d855d26Dd5290",
 };
 
 export function scrollToTop(top = 0) {
