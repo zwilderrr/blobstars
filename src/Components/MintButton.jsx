@@ -2,7 +2,13 @@ import "./MintButton.css";
 
 import React, { useState } from "react";
 
-export function MintButton({ Contract, web3, setTxHash, setTxStatus }) {
+export function MintButton({
+	Contract,
+	web3,
+	setTxHash,
+	setTxStatus,
+	setModalOpen,
+}) {
 	const MAX_COUNT = 10;
 	const [canMint, setCanMint] = useState(true);
 	const [count, setCount] = useState(1);
@@ -20,9 +26,8 @@ export function MintButton({ Contract, web3, setTxHash, setTxStatus }) {
 			const [from] = await web3.eth.requestAccounts();
 			const id = await web3.eth.net.getId();
 			if (id !== 84531) {
-				window.alert(
-					"Not connected to the Base network.\n\nPlease switch to Base and try again."
-				);
+				setModalOpen(true);
+				setTxStatus("switchNetwork");
 				return;
 			}
 			const cost = await Contract.methods.cost().call();

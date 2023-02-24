@@ -2,7 +2,7 @@
 	align-items: center;
 	background: black;
 	bottom: 0;
-	color: white;
+	color: #faf9f6;
 	display: flex;
 	justify-content: space-between;
 	left: 0;
@@ -16,7 +16,7 @@
 
 .footer svg {
 	height: 80px;
-	fill: white;
+	fill: #faf9f6;
 }
 
 .footer-logo-text {

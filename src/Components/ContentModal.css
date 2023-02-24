@@ -16,3 +16,20 @@ h1.heading {
 	font-size: 40px;
 	margin-bottom: 18px;
 }
+
+.switch-btn {
+	background: rgb(255, 161, 213);
+	border: solid;
+	border-radius: 40vw;
+	color: black;
+	font-size: 20px;
+	padding: 5px 20px;
+	margin: auto;
+	margin-top: 30px;
+}
+
+.switch-btn:hover {
+	background: rgba(255, 161, 213, 0.75);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}

@@ -1,11 +1,13 @@
-import React, { Suspense, useState } from "react";
+import "./App.css";
+
+import React, { Suspense, useEffect, useState } from "react";
 import {
+	Redirect,
+	Route,
 	BrowserRouter as Router,
 	Switch,
-	Route,
-	Redirect,
+	useLocation,
 } from "react-router-dom";
-import "./App.css";
 
 // import Header from "./Components/Header";
 const Header = React.lazy(() =>
@@ -64,6 +66,10 @@ export default function App() {
 						/>
 					</Route>
 
+					{/* <Route path={"/view"}>
+						<List web3={web3} setShrinkHeader={setShrinkHeader} />
+					</Route> */}
+
 					<Route path="/terms">
 						<TermsAndConditions setShrinkHeader={setShrinkHeader} />
 					</Route>
@@ -77,4 +83,17 @@ export default function App() {
 			</Suspense>
 		</Router>
 	);
+}
+
+function List({ web3, setShrinkHeader, Contract }) {
+	const account = useLocation();
+	console.log(account);
+	async function getNFTs() {
+		if (!web3 || !Contract) {
+			return;
+		}
+
+		Contract.methods.walletOfOwner();
+	}
+	return <div style={{ height: "100vh" }} />;
 }

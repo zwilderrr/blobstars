@@ -131,11 +131,11 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 	return (
 		<div>
 			<div className="first" ref={ref3}>
-				<div>
-					<Marquee isMobile={isMobile} />
-				</div>
 				<div className="banner-text">
 					<Heading />
+				</div>
+				<div>
+					<Marquee isMobile={isMobile} />
 				</div>
 				<div className="row">
 					{isMobile && <Image src={blobstarMain} />}
@@ -219,6 +219,7 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 						Contract={Contract}
 						setTxHash={setTxHash}
 						setTxStatus={setTxStatus}
+						setModalOpen={setModalOpen}
 					/>
 					{/* <Timeline isMobile={isMobile} /> */}
 				</div>

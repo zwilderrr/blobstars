@@ -3,6 +3,7 @@ import "./Header.css";
 import { useEffect, useState } from "react";
 
 import BlobStarsNFTJSON from "../contracts/BlobStars_dev.json";
+import { ContentModal } from "./ContentModal";
 import { Link } from "react-router-dom";
 import Web3 from "web3";
 import detectEthereumProvider from "@metamask/detect-provider";
@@ -11,7 +12,7 @@ import { socialMediaLinks } from "../content";
 let provider;
 let web3;
 
-const GET_COINBASE_WALLET = "Coinbase Wallet";
+const GET_COINBASE_WALLET = "Get a wallet";
 const CONNECT_WALLET = "Connect Wallet";
 export const COINBASE_EXTENSION_URL =
 	"https://chrome.google.com/webstore/detail/coinbase-wallet-extension/hnfanknocfeofbddgcijnmhnfnkdnaad?hl=en";
@@ -34,6 +35,9 @@ export function Header({
 	shrink,
 	isMobile,
 }) {
+	const [modalOpen, setModalOpen] = useState(false);
+	const [txStatus, setTxStatus] = useState(false);
+
 	const LISTENERS = [
 		{ name: "accountsChanged", fn: handleAccountChanged },
 		{ name: "chainChanged", fn: handleChainChanged },
@@ -50,15 +54,23 @@ export function Header({
 		}
 
 		addEventListeners(provider);
-		web3 = new Web3(provider);
-		const [selectedAccount] = await web3.eth.getAccounts();
 
-		setContract(
-			new web3.eth.Contract(BlobStarsNFTJSON.abi, contractAddress.baseTestnet)
-		);
+		web3 = new Web3(provider);
+
+		const [selectedAccount] = await web3.eth.getAccounts();
 		setConnectBtnText(formatAccount(selectedAccount) || CONNECT_WALLET);
 		setWeb3(web3);
 		setProvider(provider);
+		setContract(
+			new web3.eth.Contract(BlobStarsNFTJSON.abi, contractAddress.baseTestnet)
+		);
+
+		const id = await web3.eth.net.getId();
+
+		if (selectedAccount && id !== 84531) {
+			setModalOpen(true);
+			setTxStatus("switchNetwork");
+		}
 	}
 
 	useEffect(() => {
@@ -134,12 +146,24 @@ export function Header({
 							{link.component}
 						</a>
 					))}
+					{/* {provider && (
+						<Link className="link my-blobs" to={"/address"}>
+							My BlobStars
+						</Link>
+					)} */}
 				</div>
 
 				<button className="connect-btn" onClick={handleOnConnectWalletClick}>
 					{connectBtnText}
 				</button>
 			</div>
+
+			<ContentModal
+				txStatus={txStatus}
+				setTxStatus={setTxStatus}
+				setModalOpen={setModalOpen}
+				modalOpen={modalOpen}
+			/>
 		</div>
 	);
 }

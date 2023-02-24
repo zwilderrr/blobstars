@@ -11,6 +11,8 @@ const blockscoutTestnetInventory =
 
 const baseTestnetBlockScout = "https://base-goerli.blockscout.com/tx/";
 
+export const baseChainIdHex = `0x${Number(84531).toString(16)}`;
+
 export function ContentModal({
 	txHash,
 	txStatus,
@@ -24,7 +26,7 @@ export function ContentModal({
 		left: "50%",
 		transform: "translate(-50%, -50%)",
 		width: window.screen.width < 480 ? "70%" : 500,
-		bgcolor: "ghostwhite",
+		bgcolor: "#faf9f6",
 		boxShadow: 24,
 		p: 4,
 		borderRadius: 2,
@@ -37,6 +39,37 @@ export function ContentModal({
 		justifyContent: "center",
 		paddingTop: 40,
 		paddingBottom: 20,
+	};
+
+	const changeNetwork = async ({ networkName }) => {
+		if (!window.ethereum) throw new Error("No crypto wallet found");
+
+		try {
+			await window.ethereum.request({
+				method: "wallet_switchEthereumChain",
+				params: [{ chainId: baseChainIdHex }],
+			});
+		} catch (e) {
+			await window.ethereum.request({
+				method: "wallet_addEthereumChain",
+				params: [
+					{
+						chainId: baseChainIdHex,
+						chainName: "Base Testnet",
+						nativeCurrency: {
+							name: "Ethereum",
+							symbol: "ETH",
+							decimals: 18,
+						},
+						rpcUrls: ["https://goerli.base.org/"],
+						blockExplorerUrls: ["https://base-goerli.blockscout.com/"],
+					},
+				],
+			});
+		} finally {
+			setModalOpen(false);
+			setTxStatus("");
+		}
 	};
 
 	const content = {
@@ -113,9 +146,17 @@ export function ContentModal({
 		error: (
 			<>
 				<h1 className="heading">Error</h1>
-				<div>
-					There was an error minting your BlobStar. You've been refunded all ETH
-					sent (minus gas fees).
+				<div>Please try again.</div>
+			</>
+		),
+		switchNetwork: (
+			<>
+				<h1 className="heading">Switch networks</h1>
+				<div>You're not connected to Base Testnet.</div>
+				<div style={{ display: "flex" }}>
+					<button className="switch-btn" onClick={changeNetwork}>
+						Switch to Base Testnet
+					</button>
 				</div>
 			</>
 		),
@@ -127,6 +168,9 @@ export function ContentModal({
 			setTxStatus("");
 		}
 	}
+
+	const showLoading =
+		!txHash && txStatus !== "error" && txStatus !== "switchNetwork";
 
 	return (
 		<Modal
@@ -141,7 +185,7 @@ export function ContentModal({
 						x
 					</button>
 					{content[txStatus]}
-					{!txHash && txStatus !== "error" && (
+					{showLoading && (
 						<Box style={loadingStyle}>
 							<CircularProgress />
 						</Box>
