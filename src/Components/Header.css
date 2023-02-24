@@ -11,6 +11,9 @@
 	font-size: 18px;
 	padding: 12px 20px;
 	color: black;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .connect-btn:hover {

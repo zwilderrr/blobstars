@@ -2,6 +2,7 @@ import "./Header.css";
 
 import { useEffect, useState } from "react";
 
+import { BaseIcon } from "../images/BaseIcon";
 import BlobStarsNFTJSON from "../contracts/BlobStars_dev.json";
 import { ContentModal } from "./ContentModal";
 import { Link } from "react-router-dom";
@@ -37,6 +38,7 @@ export function Header({
 }) {
 	const [modalOpen, setModalOpen] = useState(false);
 	const [txStatus, setTxStatus] = useState(false);
+	const [onBase, setOnBase] = useState(false);
 
 	const LISTENERS = [
 		{ name: "accountsChanged", fn: handleAccountChanged },
@@ -70,7 +72,10 @@ export function Header({
 		if (selectedAccount && id !== 84531) {
 			setModalOpen(true);
 			setTxStatus("switchNetwork");
+			return;
 		}
+
+		setOnBase(true);
 	}
 
 	useEffect(() => {
@@ -154,7 +159,7 @@ export function Header({
 				</div>
 
 				<button className="connect-btn" onClick={handleOnConnectWalletClick}>
-					{connectBtnText}
+					{onBase && <BaseIcon />} {connectBtnText}
 				</button>
 			</div>
 
