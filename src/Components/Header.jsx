@@ -39,6 +39,7 @@ export function Header({
 	const [modalOpen, setModalOpen] = useState(false);
 	const [txStatus, setTxStatus] = useState(false);
 	const [onBase, setOnBase] = useState(false);
+	const [selectedAccount, setSelectedAccount] = useState("");
 
 	const LISTENERS = [
 		{ name: "accountsChanged", fn: handleAccountChanged },
@@ -61,6 +62,7 @@ export function Header({
 
 		const [selectedAccount] = await web3.eth.getAccounts();
 		setConnectBtnText(formatAccount(selectedAccount) || CONNECT_WALLET);
+		setSelectedAccount(selectedAccount);
 		setWeb3(web3);
 		setProvider(provider);
 		setContract(
@@ -159,7 +161,7 @@ export function Header({
 				</div>
 
 				<button className="connect-btn" onClick={handleOnConnectWalletClick}>
-					{onBase && <BaseIcon />} {connectBtnText}
+					{onBase && selectedAccount && <BaseIcon />} {connectBtnText}
 				</button>
 			</div>
 
