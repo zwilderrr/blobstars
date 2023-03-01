@@ -18,7 +18,7 @@ export function Marquee({ isMobile }) {
 					.fill("")
 					.map((_, i) => (
 						<div key={i}>
-							<ReactMarquee gradientWidth={0} speed={40 + 10 * i}>
+							<ReactMarquee gradientWidth={0} speed={40 + 10 * i} pauseOnHover>
 								{shuffle(images).map(src => (
 									<Image
 										key={src}
