@@ -1,7 +1,6 @@
 .carousel-wrapper {
 	padding-top: 75px;
 	min-height: 70vh;
-	padding-bottom: 75px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -11,6 +10,6 @@
 	.carousel-wrapper {
 		min-height: 52vh;
 		padding-top: 80px;
-		/* padding-bottom: 80px; */
+		padding-bottom: 40px;
 	}
 }

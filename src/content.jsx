@@ -125,7 +125,7 @@ export const timelineText = [
 
 export const rareText = [
 	"A blob is silly, but a BLOB (binary large object) is powerful.",
-	"By combining the two into an NFT, we create a symbol of something that is fun and friendly yet innovative and game-changing; something that from a distance—as a blob—looks like a useless bunch of wasted space, but which up close—as a BLOB—is the data structure helping Ethereum scale to the next level and beyond.",
+	"By combining the two into an NFT, we create a symbol of something that is fun and friendly, yet innovative and game-changing. Something that from a distance—as a blob—looks like a useless bunch of wasted space, but which up close—as a BLOB—is the data structure helping Ethereum scale to the next level and beyond.",
 ];
 // export const rareText = [
 // 	"When you mint a BlobStar, you mint a vote for humanity. You proudly state that life is not a zero-sum game. It's a game of big and little triumphs, big and little acts of kindness, and it is only won when everyone wins.",
