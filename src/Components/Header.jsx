@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { BaseIcon } from "../images/BaseIcon";
 import BlobStarsNFTJSON from "../contracts/BlobStars_dev.json";
 import { ContentModal } from "./ContentModal";
-import { Link } from "react-router-dom";
 import Web3 from "web3";
 import detectEthereumProvider from "@metamask/detect-provider";
 import { socialMediaLinks } from "../content";

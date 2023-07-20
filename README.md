@@ -1,8 +1,3 @@
 # BlobStarsNFT
 
-A fun, friendly community of movers and shakers. BlobStarsNFT is a community of
-10,000 uniquely generated NFTs blobin' out on the Base blockchain. They're
-blobs, so they live big, but they're cartoons, so they're fun and friendly
-(and even a bit mischievous)! Gain instant access to a community of epic people
-living epic lives. Rare, ultra-rare, and hyper-rare BlobStars are ready to blob
-and roll.
+BlobStarsNFT is a fun, friendly community of 4,844 NFTs blobin' out on the Base L2. They're a nod to EIP-4844 and a bright beacon of light for the kind crypto folks bringing important, often misunderstood, change to the world.
