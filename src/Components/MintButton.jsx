@@ -25,7 +25,7 @@ export function MintButton({
 		try {
 			const [from] = await web3.eth.requestAccounts();
 			const id = await web3.eth.net.getId();
-			if (id !== 84531) {
+			if (id !== 8453) {
 				setModalOpen(true);
 				setTxStatus("switchNetwork");
 				return;

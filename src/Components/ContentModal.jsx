@@ -6,12 +6,12 @@ import React from "react";
 import { tweet } from "../content";
 
 const openSeaUrlDev = "https://testnets.opensea.io/collection/blobstars-dev-2";
-const blockscoutTestnetInventory =
-	"https://base-goerli.blockscout.com/token/0x24Fc73d294Ff3b9beC76e875213d855d26Dd5290?tab=inventory";
+const blockscoutInventory =
+	"https://base.blockscout.com/token/0x06f0Aa95899A6F3Ff1F816478823646E10Ea3e97?tab=inventory";
 
-const baseTestnetBlockScout = "https://base-goerli.blockscout.com/tx/";
+const baseBlockScout = "https://base.blockscout.com/tx/";
 
-export const baseChainIdHex = `0x${Number(84531).toString(16)}`;
+export const baseChainIdHex = `0x${Number(8453).toString(16)}`;
 
 export function ContentModal({
 	txHash,
@@ -55,14 +55,14 @@ export function ContentModal({
 				params: [
 					{
 						chainId: baseChainIdHex,
-						chainName: "Base Testnet",
+						chainName: "Base",
 						nativeCurrency: {
 							name: "Ethereum",
 							symbol: "ETH",
 							decimals: 18,
 						},
-						rpcUrls: ["https://goerli.base.org/"],
-						blockExplorerUrls: ["https://base-goerli.blockscout.com/"],
+						rpcUrls: ["https://developer-access-mainnet.base.org/"],
+						blockExplorerUrls: ["https://base.blockscout.com/"],
 					},
 				],
 			});
@@ -79,7 +79,7 @@ export function ContentModal({
 				<div style={{ paddingBottom: 12 }}>
 					View your transaction on{" "}
 					<a
-						href={baseTestnetBlockScout + txHash}
+						href={baseBlockScout + txHash}
 						className="external-link"
 						alt="blockscout"
 						target="_blank"
@@ -89,7 +89,7 @@ export function ContentModal({
 					</a>{" "}
 					and check out the full inventory{" "}
 					<a
-						href={blockscoutTestnetInventory}
+						href={blockscoutInventory}
 						className="external-link"
 						alt="blockscout"
 						target="_blank"
@@ -152,10 +152,10 @@ export function ContentModal({
 		switchNetwork: (
 			<>
 				<h1 className="heading">Switch networks</h1>
-				<div>You're not connected to Base Testnet.</div>
+				<div>You're not connected to Base.</div>
 				<div style={{ display: "flex" }}>
 					<button className="switch-btn" onClick={changeNetwork}>
-						Switch to Base Testnet
+						Switch to Base
 					</button>
 				</div>
 			</>

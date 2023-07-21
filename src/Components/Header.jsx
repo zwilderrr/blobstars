@@ -3,7 +3,7 @@ import "./Header.css";
 import { useEffect, useState } from "react";
 
 import { BaseIcon } from "../images/BaseIcon";
-import BlobStarsNFTJSON from "../contracts/BlobStars_dev.json";
+import BlobStars from "../contracts/BlobStars.json";
 import { ContentModal } from "./ContentModal";
 import Web3 from "web3";
 import detectEthereumProvider from "@metamask/detect-provider";
@@ -22,6 +22,7 @@ const contractAddress = {
 	goerli: "0x8465c44BD3ca5dD497FE725E91b788Acc6C3b452",
 	local: "0xa93Ae522784Bf2Ae7B13542f9971A2D029d3D93b",
 	baseTestnet: "0x24Fc73d294Ff3b9beC76e875213d855d26Dd5290",
+	baseMainnet: "0x06f0Aa95899A6F3Ff1F816478823646E10Ea3e97",
 };
 
 export function scrollToTop(top = 0) {
@@ -65,12 +66,12 @@ export function Header({
 		setWeb3(web3);
 		setProvider(provider);
 		setContract(
-			new web3.eth.Contract(BlobStarsNFTJSON.abi, contractAddress.baseTestnet)
+			new web3.eth.Contract(BlobStars.abi, contractAddress.baseMainnet)
 		);
 
 		const id = await web3.eth.net.getId();
 
-		if (selectedAccount && id !== 84531) {
+		if (selectedAccount && id !== 8453) {
 			setModalOpen(true);
 			setTxStatus("switchNetwork");
 			return;

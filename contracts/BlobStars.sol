@@ -5,7 +5,7 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract BlobStarsNFT is ERC721Enumerable, Ownable {
+contract BlobStars is ERC721Enumerable, Ownable {
   using Strings for uint256;
 
   string public baseURI;
