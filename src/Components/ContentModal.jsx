@@ -7,7 +7,7 @@ import { tweet } from "../content";
 
 const openSeaUrlDev = "https://testnets.opensea.io/collection/blobstars-dev-2";
 const blockscoutInventory =
-	"https://base.blockscout.com/token/0x06f0Aa95899A6F3Ff1F816478823646E10Ea3e97?tab=inventory";
+	"https://base.blockscout.com/token/0xAE6c8391D1f01d08F71AC0A3450C98772173635E?tab=inventory";
 
 const baseBlockScout = "https://base.blockscout.com/tx/";
 
