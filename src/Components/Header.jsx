@@ -22,7 +22,7 @@ const contractAddress = {
 	goerli: "0x8465c44BD3ca5dD497FE725E91b788Acc6C3b452",
 	local: "0xa93Ae522784Bf2Ae7B13542f9971A2D029d3D93b",
 	baseTestnet: "0x24Fc73d294Ff3b9beC76e875213d855d26Dd5290",
-	baseMainnet: "0x06f0Aa95899A6F3Ff1F816478823646E10Ea3e97",
+	baseMainnet: "0xAE6c8391D1f01d08F71AC0A3450C98772173635E",
 };
 
 export function scrollToTop(top = 0) {
