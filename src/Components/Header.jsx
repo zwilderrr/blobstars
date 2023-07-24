@@ -3,7 +3,7 @@ import "./Header.css";
 import { useEffect, useState } from "react";
 
 import { BaseIcon } from "../images/BaseIcon";
-import BlobStars from "../contracts/BlobStars.json";
+import BlobStarsNFT from "../contracts/BlobStarsNFT.json";
 import { ContentModal } from "./ContentModal";
 import Web3 from "web3";
 import detectEthereumProvider from "@metamask/detect-provider";
@@ -22,7 +22,7 @@ const contractAddress = {
 	goerli: "0x8465c44BD3ca5dD497FE725E91b788Acc6C3b452",
 	local: "0xa93Ae522784Bf2Ae7B13542f9971A2D029d3D93b",
 	baseTestnet: "0x24Fc73d294Ff3b9beC76e875213d855d26Dd5290",
-	baseMainnet: "0xAE6c8391D1f01d08F71AC0A3450C98772173635E",
+	baseMainnet: "0x09Ce1ABaf8A4250337d26982805aA6527c4e9540",
 };
 
 export function scrollToTop(top = 0) {
@@ -66,7 +66,7 @@ export function Header({
 		setWeb3(web3);
 		setProvider(provider);
 		setContract(
-			new web3.eth.Contract(BlobStars.abi, contractAddress.baseMainnet)
+			new web3.eth.Contract(BlobStarsNFT.abi, contractAddress.baseMainnet)
 		);
 
 		const id = await web3.eth.net.getId();
