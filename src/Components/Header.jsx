@@ -172,16 +172,18 @@ export function Header({
 				<div className="logo-text">B</div>
 			</span>
 
-			<div
-				className="count-text pointer"
-				onClick={() =>
-					document
-						.getElementById("show-support")
-						.scrollIntoView({ behavior: "smooth" })
-				}
-			>
-				{currentMintCount.padStart(4, "0")} / 4344
-			</div>
+			{web3 && (
+				<div
+					className="count-text pointer"
+					onClick={() =>
+						document
+							.getElementById("show-support")
+							.scrollIntoView({ behavior: "smooth" })
+					}
+				>
+					{currentMintCount.padStart(4, "0")} / 4344
+				</div>
+			)}
 
 			<div className="links-wrapper">
 				<div className="links">
