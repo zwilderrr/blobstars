@@ -44,6 +44,7 @@ export function Header({
 	const LISTENERS = [
 		{ name: "accountsChanged", fn: handleAccountChanged },
 		{ name: "chainChanged", fn: handleChainChanged },
+		{ name: "disconnect", fn: handleWalletDisconnected },
 	];
 
 	const [connectBtnText, setConnectBtnText] = useState(CONNECT_WALLET);
@@ -73,6 +74,7 @@ export function Header({
 
 		if (selectedAccount && id !== 8453) {
 			setModalOpen(true);
+			setOnBase(false);
 			setTxStatus("switchNetwork");
 			return;
 		}
@@ -98,7 +100,11 @@ export function Header({
 
 	function handleChainChanged(chainId) {
 		window.location.reload();
-		console.log(chainId);
+	}
+
+	function handleWalletDisconnected() {
+		console.log("disconnected");
+		setOnBase(false);
 	}
 
 	function handleAccountChanged(accounts) {
@@ -108,6 +114,14 @@ export function Header({
 	async function handleOnConnectWalletClick() {
 		if (web3) {
 			await web3.eth.requestAccounts();
+			const id = await web3.eth.net.getId();
+			const [selectedAccount] = await web3.eth.getAccounts();
+			setConnectBtnText(formatAccount(selectedAccount) || CONNECT_WALLET);
+			setSelectedAccount(selectedAccount);
+
+			if (id === 8453) {
+				setOnBase(true);
+			}
 			return;
 		}
 
