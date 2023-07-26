@@ -10,6 +10,7 @@ import detectEthereumProvider from "@metamask/detect-provider";
 import { socialMediaLinks } from "../content";
 
 let provider;
+// this should be the web3 coming from state in App.jsx, but the app works this way too, and I'm about to go public, and... :)
 let web3;
 
 const GET_COINBASE_WALLET = "Get a wallet";
@@ -33,6 +34,7 @@ export function Header({
 	setWeb3,
 	setProvider,
 	setContract,
+	Contract,
 	shrink,
 	isMobile,
 }) {
@@ -48,6 +50,22 @@ export function Header({
 	];
 
 	const [connectBtnText, setConnectBtnText] = useState(CONNECT_WALLET);
+
+	const [currentMintCount, setCurrentMintCount] = useState("");
+
+	useEffect(() => {
+		if (Contract) {
+			Contract.methods.totalSupply().call().then(setCurrentMintCount);
+		}
+
+		const timer = setInterval(async () => {
+			if (Contract) {
+				Contract.methods.totalSupply().call().then(setCurrentMintCount);
+			}
+		}, 1000 * 5);
+
+		return () => clearInterval(timer);
+	}, [web3, Contract]);
 
 	async function connectWallet() {
 		provider = await detectEthereumProvider({ timeout: 1000 });
@@ -153,6 +171,17 @@ export function Header({
 			>
 				<div className="logo-text">B</div>
 			</span>
+
+			<div
+				className="count-text pointer"
+				onClick={() =>
+					document
+						.getElementById("show-support")
+						.scrollIntoView({ behavior: "smooth" })
+				}
+			>
+				{currentMintCount.padStart(4, "0")} / 4344
+			</div>
 
 			<div className="links-wrapper">
 				<div className="links">

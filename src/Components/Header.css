@@ -23,6 +23,15 @@
 	transition: 0.3s;
 }
 
+.count-text {
+	font-size: 20px;
+	margin-top: auto;
+	padding-top: 6px;
+	margin-bottom: auto;
+	margin-left: auto;
+	margin-right: 32px;
+}
+
 .delay1s {
 	animation-delay: 2s;
 }
@@ -86,6 +95,15 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+	}
+
+	.count-text {
+		font-size: 14px;
+		margin-top: auto;
+		padding-top: 2px;
+		margin-bottom: auto;
+		margin-left: auto;
+		margin-right: 10px;
 	}
 
 	.header {

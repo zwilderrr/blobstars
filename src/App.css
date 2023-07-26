@@ -13,7 +13,8 @@
 	font-family: "Lobster";
 }
 
-.header .logo-text:hover {
+.header .logo-text:hover,
+.count-text:hover {
 	cursor: pointer;
 }
 

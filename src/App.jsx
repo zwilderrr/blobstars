@@ -48,6 +48,7 @@ export default function App() {
 		<Router>
 			<Suspense fallback={<div />}>
 				<Header
+					Contract={Contract}
 					setWeb3={setWeb3}
 					setProvider={setProvider}
 					setContract={setContract}

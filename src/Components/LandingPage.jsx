@@ -209,7 +209,11 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 
 			<div className="bgwhite">
 				<div className="row v-stack">
-					<div className="support-text" style={{ paddingBottom: 60 }}>
+					<div
+						id="show-support"
+						className="support-text"
+						style={{ paddingBottom: 60 }}
+					>
 						Mint a BlobStar now to show your support for good people doing good
 						things
 					</div>
