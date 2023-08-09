@@ -18,6 +18,7 @@ const CONNECT_WALLET = "Connect Wallet";
 export const COINBASE_EXTENSION_URL =
 	"https://chrome.google.com/webstore/detail/coinbase-wallet-extension/hnfanknocfeofbddgcijnmhnfnkdnaad?hl=en";
 export const COINBASE_WALLET_URL = "https://www.coinbase.com/wallet/downloads";
+export const BASE_BRIDGE_URL = "https://bridge.base.org/";
 
 const contractAddress = {
 	goerli: "0x8465c44BD3ca5dD497FE725E91b788Acc6C3b452",

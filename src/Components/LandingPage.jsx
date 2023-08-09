@@ -1,6 +1,10 @@
 import "./LandingPage.css";
 
-import { COINBASE_EXTENSION_URL, COINBASE_WALLET_URL } from "./Header";
+import {
+	BASE_BRIDGE_URL,
+	COINBASE_EXTENSION_URL,
+	COINBASE_WALLET_URL,
+} from "./Header";
 import { ctaText, rareText, whyText } from "../content";
 import { useEffect, useRef, useState } from "react";
 
@@ -224,7 +228,18 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 						setTxStatus={setTxStatus}
 						setModalOpen={setModalOpen}
 					/>
-					{/* <Timeline isMobile={isMobile} /> */}
+					<div style={{ textAlign: "center", paddingTop: 30 }}>
+						Bridge ETH to BASE at{" "}
+						<a
+							href={BASE_BRIDGE_URL}
+							className="external-link"
+							alt="base bridge"
+							target="_blank"
+							rel="noreferrer"
+						>
+							https://bridge.base.org/
+						</a>
+					</div>
 				</div>
 			</div>
 
