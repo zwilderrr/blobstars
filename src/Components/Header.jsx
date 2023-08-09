@@ -181,7 +181,7 @@ export function Header({
 							.scrollIntoView({ behavior: "smooth" })
 					}
 				>
-					{currentMintCount.padStart(4, "0")} / 4344
+					{currentMintCount.padStart(4, "0")} / 4844
 				</div>
 			)}
 
