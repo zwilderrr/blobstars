@@ -5,7 +5,7 @@
 	"dependencies": {
 		"@emotion/react": "^11.6.0",
 		"@emotion/styled": "^11.6.0",
-		"@metamask/detect-provider": "^1.2.0",
+		"@metamask/detect-provider": "^2.0.0",
 		"@mui/lab": "^5.0.0-alpha.59",
 		"@mui/material": "^5.2.0",
 		"@openzeppelin/contracts": "^4.8.1",

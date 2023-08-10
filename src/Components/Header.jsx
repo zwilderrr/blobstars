@@ -69,9 +69,15 @@ export function Header({
 	}, [web3, Contract]);
 
 	async function connectWallet() {
-		provider = await detectEthereumProvider({ timeout: 1000 });
+		let provider;
+		try {
+			provider = await detectEthereumProvider({ timeout: 1000 });
+		} catch (error) {
+			console.log(error);
+		}
 
 		if (!provider) {
+			alert("no provider");
 			setConnectBtnText(GET_COINBASE_WALLET);
 			return;
 		}
