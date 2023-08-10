@@ -145,7 +145,7 @@ export function ContentModal({
 		),
 		error: (
 			<>
-				<h1 className="heading">Error</h1>
+				<h1 className="heading">Uh oh!</h1>
 				<div>Please try again.</div>
 			</>
 		),
