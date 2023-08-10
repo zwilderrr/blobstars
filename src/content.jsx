@@ -1,3 +1,4 @@
+import { ReactComponent as OpenseaIcon } from "./images/opensea.svg";
 import { ReactComponent as TwitterIcon } from "./images/twitter.svg";
 import { scrollToTop } from "./Components/Header";
 
@@ -7,6 +8,11 @@ export const socialMediaLinks = [
 	// 	name: "discord",
 	// 	href: "https://discord.gg/Hb6EezYRCH",
 	// },
+	{
+		name: "opensea",
+		href: "https://opensea.io/collection/blobstarsnft",
+		component: <OpenseaIcon className="fab" alt="opensea" />,
+	},
 	{
 		name: "twitter",
 		href: "https://twitter.com/blobstars_nft",
