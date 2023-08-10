@@ -63,10 +63,10 @@ export function Header({
 			if (Contract) {
 				Contract.methods.totalSupply().call().then(setCurrentMintCount);
 			}
-		}, 1000 * 5);
+		}, 1000 * 30);
 
 		return () => clearInterval(timer);
-	}, [web3, Contract]);
+	}, [Contract]);
 
 	async function connectWallet() {
 		let provider;
@@ -77,7 +77,6 @@ export function Header({
 		}
 
 		if (!provider) {
-			alert("no provider");
 			setConnectBtnText(GET_COINBASE_WALLET);
 			return;
 		}
