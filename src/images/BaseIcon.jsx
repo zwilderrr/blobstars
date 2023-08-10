@@ -15,8 +15,8 @@ export function BaseIcon() {
 				fill="#0052FF"
 			/>
 			<path
-				fill-rule="evenodd"
-				clip-rule="evenodd"
+				fillRule="evenodd"
+				clipRule="evenodd"
 				d="M164.612 281.197C228.785 281.197 280.809 229.174 280.809 165C280.809 100.826 228.785 48.8028 164.612 48.8028C103.731 48.8028 53.7858 95.6236 48.8199 155.221H221.248V174.57H48.8028C53.6695 234.267 103.66 281.197 164.612 281.197Z"
 				fill="white"
 			/>
