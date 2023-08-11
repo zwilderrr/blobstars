@@ -71,7 +71,7 @@ export function Header({
 	async function connectWallet() {
 		let provider;
 		try {
-			provider = await detectEthereumProvider({ timeout: 1000 });
+			provider = await detectEthereumProvider({ timeout: 3000 });
 		} catch (error) {
 			console.log(error);
 		}

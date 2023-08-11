@@ -19,7 +19,7 @@ export function Marquee({ isMobile }) {
 					.fill("")
 					.map((_, i) => (
 						<div key={i}>
-							<ReactMarquee gradientWidth={0} speed={40 + 10 * i} autoFill>
+							{/* <ReactMarquee gradientWidth={0} speed={40 + 10 * i} autoFill>
 								{shuffle(images).map(src => (
 									<Image
 										key={src}
@@ -27,7 +27,8 @@ export function Marquee({ isMobile }) {
 										style={{ width: isMobile ? "150px" : "200px" }}
 									/>
 								))}
-							</ReactMarquee>
+							</ReactMarquee> */}
+							<h1>BLOBS</h1>
 						</div>
 					))}
 			</div>

@@ -45,56 +45,84 @@ export default function App() {
 	const isMobile = window.screen.width <= 768;
 
 	return (
-		<Router>
-			<Suspense fallback={<div />}>
-				<Header
-					Contract={Contract}
-					setWeb3={setWeb3}
-					setProvider={setProvider}
-					setContract={setContract}
-					shrink={isMobile ? true : shrinkHeader}
-					isMobile={isMobile}
-				/>
+		<ErrorBoundary
+			fallback={
+				<div>
+					Looks like we're having issues. Trying minting at{" "}
+					<a href="https://mint.fun/base/0x09Ce1ABaf8A4250337d26982805aA6527c4e9540">
+						minting.fun
+					</a>
+				</div>
+			}
+		>
+			<Router>
+				<Suspense fallback={<div />}>
+					<Header
+						Contract={Contract}
+						setWeb3={setWeb3}
+						setProvider={setProvider}
+						setContract={setContract}
+						shrink={isMobile ? true : shrinkHeader}
+						isMobile={isMobile}
+					/>
 
-				<Switch>
-					<Route path="/" exact>
-						<LandingPage
-							web3={web3}
-							provider={provider}
-							Contract={Contract}
-							isMobile={isMobile}
-							setShrinkHeader={setShrinkHeader}
-						/>
-					</Route>
+					<Switch>
+						<Route path="/" exact>
+							<LandingPage
+								web3={web3}
+								provider={provider}
+								Contract={Contract}
+								isMobile={isMobile}
+								setShrinkHeader={setShrinkHeader}
+							/>
+						</Route>
 
-					{/* <Route path={"/view"}>
+						{/* <Route path={"/view"}>
 						<List web3={web3} setShrinkHeader={setShrinkHeader} />
 					</Route> */}
 
-					<Route path="/terms">
-						<TermsAndConditions setShrinkHeader={setShrinkHeader} />
-					</Route>
+						<Route path="/terms">
+							<TermsAndConditions setShrinkHeader={setShrinkHeader} />
+						</Route>
 
-					<Route>
-						<Redirect to="/" />
-					</Route>
-				</Switch>
+						<Route>
+							<Redirect to="/" />
+						</Route>
+					</Switch>
 
-				<Footer />
-			</Suspense>
-		</Router>
+					<Footer />
+				</Suspense>
+			</Router>
+		</ErrorBoundary>
 	);
 }
 
-function List({ web3, setShrinkHeader, Contract }) {
-	const account = useLocation();
-	console.log(account);
-	async function getNFTs() {
-		if (!web3 || !Contract) {
-			return;
+class ErrorBoundary extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { hasError: false };
+	}
+
+	static getDerivedStateFromError(error) {
+		// Update state so the next render will show the fallback UI.
+		return { hasError: true };
+	}
+
+	componentDidCatch(error, info) {
+		// Example "componentStack":
+		//   in ComponentThatThrows (created by App)
+		//   in ErrorBoundary (created by App)
+		//   in div (created by App)
+		//   in App
+		alert(error.message, info.componentStack);
+	}
+
+	render() {
+		if (this.state.hasError) {
+			// You can render any custom fallback UI
+			return this.props.fallback;
 		}
 
-		Contract.methods.walletOfOwner();
+		return this.props.children;
 	}
-	return <div style={{ height: "100vh" }} />;
 }

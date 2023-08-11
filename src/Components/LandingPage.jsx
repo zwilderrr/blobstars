@@ -138,9 +138,9 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 				<div className="banner-text">
 					<Heading />
 				</div>
-				<div>
+				{/* <div>
 					<Marquee isMobile={isMobile} />
-				</div>
+				</div> */}
 				<div className="row">
 					{isMobile && <Image src={blobstarMain} />}
 					<div className="col-left">
