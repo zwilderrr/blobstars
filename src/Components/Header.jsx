@@ -63,7 +63,7 @@ export function Header({
 			if (Contract) {
 				Contract.methods.totalSupply().call().then(setCurrentMintCount);
 			}
-		}, 1000 * 30);
+		}, 1000 * 10);
 
 		return () => clearInterval(timer);
 	}, [Contract]);
@@ -145,6 +145,13 @@ export function Header({
 
 			if (id === 8453) {
 				setOnBase(true);
+			}
+			const Contract = new web3.eth.Contract(
+				BlobStarsNFT.abi,
+				contractAddress.baseMainnet
+			);
+			if (Contract) {
+				Contract.methods.totalSupply().call().then(setCurrentMintCount);
 			}
 			return;
 		}

@@ -8,6 +8,7 @@ export function MintButton({
 	setTxHash,
 	setTxStatus,
 	setModalOpen,
+	setMintedId,
 }) {
 	const MAX_COUNT = 10;
 	const [canMint, setCanMint] = useState(true);
@@ -62,9 +63,16 @@ export function MintButton({
 					console.log("error", res);
 				})
 				.then(res => {
-					setCanMint(true);
-					setTxStatus("complete");
-					setTxHash(res.transactionHash);
+					Contract.methods
+						.walletOfOwner(from)
+						.call()
+						.then(res => {
+							const mintedId = parseInt(res[res.length - 1]);
+							setCanMint(true);
+							setTxStatus("complete");
+							setTxHash(res.transactionHash);
+							setMintedId(mintedId);
+						});
 				});
 		} catch (e) {
 			console.log("catch", e);

@@ -86,6 +86,7 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 	const [txHash, setTxHash] = useState();
 	const [modalOpen, setModalOpen] = useState(false);
 	const [txStatus, setTxStatus] = useState("");
+	const [mintedId, setMintedId] = useState();
 
 	useEffect(() => {
 		if (txStatus) {
@@ -227,6 +228,7 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 						setTxHash={setTxHash}
 						setTxStatus={setTxStatus}
 						setModalOpen={setModalOpen}
+						setMintedId={setMintedId}
 					/>
 					<div style={{ textAlign: "center", paddingTop: 30 }}>
 						Bridge ETH to BASE at{" "}
@@ -253,6 +255,8 @@ export function LandingPage({ web3, Contract, isMobile, setShrinkHeader }) {
 				txStatus={txStatus}
 				setTxStatus={setTxStatus}
 				setModalOpen={setModalOpen}
+				setMintedId={setMintedId}
+				mintedId={mintedId}
 				isMobile={isMobile}
 			/>
 		</div>

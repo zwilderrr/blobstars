@@ -30,7 +30,7 @@ export const socialMediaLinks = [
 ];
 
 export const tweet =
-	"https://twitter.com/intent/tweet?text=Finally%20achieved%20BlobStar%20status!%20Mint%20yours%20now%20at%20&url=https%3A%2F%2Fblobstars.io";
+	"https://twitter.com/intent/tweet?text=Just%20minted%20one%20seriously%20awesome%20%40BlobStar_NFT%20https%3A//opensea.io/assets/base/0x09ce1abaf8a4250337d26982805aa6527c4e9540/";
 
 export const termsLink = { name: "terms", href: "/terms" };
 

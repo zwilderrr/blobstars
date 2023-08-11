@@ -5,7 +5,9 @@ import { Box, CircularProgress, Fade, Modal } from "@mui/material";
 import React from "react";
 import { tweet } from "../content";
 
-const openSeaUrlDev = "https://testnets.opensea.io/collection/blobstars-dev-2";
+const openSeaUrl = "https://opensea.io/collection/blobstarsnft";
+const openSeaViewBlobStar =
+	"https://opensea.io/assets/base/0x09ce1abaf8a4250337d26982805aa6527c4e9540/";
 const blockscoutInventory =
 	"https://base.blockscout.com/token/0x09Ce1ABaf8A4250337d26982805aA6527c4e9540?tab=inventory";
 
@@ -19,6 +21,8 @@ export function ContentModal({
 	modalOpen,
 	setModalOpen,
 	setTxStatus,
+	setMintedId,
+	mintedId,
 }) {
 	const style = {
 		position: "absolute",
@@ -77,17 +81,17 @@ export function ContentModal({
 			<>
 				<h1 className="heading">Success</h1>
 				<div style={{ paddingBottom: 12 }}>
-					View your transaction on{" "}
+					View your latest NFT on{" "}
 					<a
-						href={baseBlockScout + txHash}
+						href={openSeaViewBlobStar + mintedId}
 						className="external-link"
-						alt="blockscout"
+						alt="opensea"
 						target="_blank"
 						rel="noreferrer"
 					>
-						Blockscout
+						OpenSea
 					</a>{" "}
-					and check out the full inventory{" "}
+					{/* and check out the full inventory{" "}
 					<a
 						href={blockscoutInventory}
 						className="external-link"
@@ -97,23 +101,10 @@ export function ContentModal({
 					>
 						here
 					</a>
-					.
-					{/* and head over to{" "}
+					. */}
+					and share your new BlobStar on{" "}
 					<a
-						href={openSeaUrlDev}
-						className="external-link"
-						alt="opensea"
-						target="_blank"
-						rel="noreferrer"
-					>
-						OpenSea
-					</a>{" "}
-					to check out your BlobStar (may take a few minutes to display) */}
-				</div>
-				<div>
-					Share your new BlobStar on{" "}
-					<a
-						href={tweet}
+						href={tweet + mintedId}
 						className="external-link"
 						alt="twitter"
 						target="_blank"
@@ -166,6 +157,7 @@ export function ContentModal({
 		if (!reason || reason === "escapeKeyDown") {
 			setModalOpen(false);
 			setTxStatus("");
+			setMintedId();
 		}
 	}
 
