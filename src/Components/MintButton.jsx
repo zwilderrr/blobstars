@@ -10,7 +10,7 @@ export function MintButton({
 	setModalOpen,
 	setMintedId,
 }) {
-	const MAX_COUNT = 10;
+	const MAX_COUNT = 1000;
 	const [canMint, setCanMint] = useState(true);
 	const [count, setCount] = useState(1);
 
@@ -90,7 +90,7 @@ export function MintButton({
 				<button
 					className="count-btn"
 					disabled={disableButtons || count === MAX_COUNT}
-					onClick={() => handleChangeCount(1)}
+					onClick={() => handleChangeCount(10)}
 				>
 					{"▲"}
 				</button>
