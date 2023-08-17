@@ -90,7 +90,7 @@ export function MintButton({
 				<button
 					className="count-btn"
 					disabled={disableButtons || count === MAX_COUNT}
-					onClick={() => handleChangeCount(10)}
+					onClick={() => handleChangeCount(5)}
 				>
 					{"▲"}
 				</button>
