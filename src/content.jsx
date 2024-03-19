@@ -11,7 +11,7 @@ export const socialMediaLinks = [
 	{
 		name: "blockscout",
 		href: "https://base.blockscout.com/token/0x09Ce1ABaf8A4250337d26982805aA6527c4e9540",
-		component: <div style={{ paddingTop: 4 }}>🌏</div>,
+		component: <div style={{ paddingTop: 2 }}>🌏</div>,
 	},
 	{
 		name: "twitter",
