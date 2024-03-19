@@ -6,8 +6,8 @@ import React from "react";
 import { tweet } from "../content";
 
 const openSeaUrl = "https://opensea.io/collection/blobstarsnft";
-const openSeaViewBlobStar =
-	"https://opensea.io/assets/base/0x09ce1abaf8a4250337d26982805aa6527c4e9540/";
+const blockscoutViewBlob =
+	"https://base.blockscout.com/token/0x09Ce1ABaf8A4250337d26982805aA6527c4e9540/instance/";
 const blockscoutInventory =
 	"https://base.blockscout.com/token/0x09Ce1ABaf8A4250337d26982805aA6527c4e9540?tab=inventory";
 
@@ -81,7 +81,28 @@ export function ContentModal({
 			<>
 				<h1 className="heading">Success</h1>
 				<div style={{ paddingBottom: 12 }}>
-					Share your new BlobStar on{" "}
+					View your BlobStar NFT on{" "}
+					<a
+						href={blockscoutViewBlob + mintedId}
+						className="external-link"
+						alt="blockscout"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Blockscout
+					</a>{" "}
+					{/* and check out the full inventory{" "}
+					<a
+						href={blockscoutInventory}
+						className="external-link"
+						alt="blockscout"
+						target="_blank"
+						rel="noreferrer"
+					>
+						here
+					</a>
+					. */}
+					and share it on{" "}
 					<a
 						href={tweet + mintedId}
 						className="external-link"

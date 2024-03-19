@@ -30,7 +30,7 @@ export const socialMediaLinks = [
 ];
 
 export const tweet =
-	"https://twitter.com/intent/tweet?text=Just%20minted%20one%20seriously%20awesome%20%40BlobStar_NFT%20https%3A//opensea.io/assets/base/0x09ce1abaf8a4250337d26982805aa6527c4e9540/";
+	"https://twitter.com/intent/tweet?text=Just%20minted%20a%20seriously%20awesome%20%40BlobStar_NFT.%20Check%20it%20out%20on%20https%3A%2F%2Fbase.blockscout.com%2Ftoken%2F0x09Ce1ABaf8A4250337d26982805aA6527c4e9540%2Finstance%2F";
 
 export const termsLink = { name: "terms", href: "/terms" };
 
