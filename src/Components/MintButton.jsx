@@ -16,7 +16,12 @@ export function MintButton({
 
 	function handleChangeCount(step) {
 		const nextCount = count + step;
-		if (nextCount > MAX_COUNT || nextCount < 1) {
+		if (nextCount > MAX_COUNT) {
+			setCount(MAX_COUNT);
+			return;
+		}
+		if (nextCount < 1) {
+			setCount(1);
 			return;
 		}
 		setCount(nextCount);
