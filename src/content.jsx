@@ -9,9 +9,9 @@ export const socialMediaLinks = [
 	// 	href: "https://discord.gg/Hb6EezYRCH",
 	// },
 	{
-		name: "opensea",
-		href: "https://opensea.io/collection/blobstarsnft",
-		component: <OpenseaIcon className="fab" alt="opensea" />,
+		name: "blockscout",
+		href: "https://base.blockscout.com/token/0x09Ce1ABaf8A4250337d26982805aA6527c4e9540",
+		component: <div style={{ paddingTop: 4 }}>🌏</div>,
 	},
 	{
 		name: "twitter",

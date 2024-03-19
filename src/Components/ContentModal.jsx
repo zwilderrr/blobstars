@@ -81,28 +81,7 @@ export function ContentModal({
 			<>
 				<h1 className="heading">Success</h1>
 				<div style={{ paddingBottom: 12 }}>
-					View your latest NFT on{" "}
-					<a
-						href={openSeaViewBlobStar + mintedId}
-						className="external-link"
-						alt="opensea"
-						target="_blank"
-						rel="noreferrer"
-					>
-						OpenSea
-					</a>{" "}
-					{/* and check out the full inventory{" "}
-					<a
-						href={blockscoutInventory}
-						className="external-link"
-						alt="blockscout"
-						target="_blank"
-						rel="noreferrer"
-					>
-						here
-					</a>
-					. */}
-					and share your new BlobStar on{" "}
+					Share your new BlobStar on{" "}
 					<a
 						href={tweet + mintedId}
 						className="external-link"
