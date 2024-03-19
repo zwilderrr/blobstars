@@ -10,7 +10,7 @@ export function MintButton({
 	setModalOpen,
 	setMintedId,
 }) {
-	const MAX_COUNT = 1000;
+	const MAX_COUNT = 10;
 	const [canMint, setCanMint] = useState(true);
 	const [count, setCount] = useState(1);
 
